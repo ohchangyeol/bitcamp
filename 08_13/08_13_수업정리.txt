@@ -1,0 +1,15 @@
+return = 돌려받다 or 돌아가다. 돌려받을시엔 무조건 value값만 돌려 받을수 있다.
+
+refactoring(리팩토링) - 소스를 보안하는 행위.
+
+Initializr (이니셜라이저) - 초기화
+
+boolean = false 로 초기화 됨.
+	  0은 거짓, 1은 참.
+
+내가 구현할것에 대한 명확한 이해도.
+real 을 분석하고 계획하는것을 시스템적으로 옮기는것 > 객체지향 방법론?
+
+app / bean
+bean - real world 를 표현한것.main이 없다.
+	bean 을 실행하려면 app이 필요하다.

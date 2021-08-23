@@ -1,0 +1,52 @@
+# 08_23 수업정리
+
+## 이전 수업 복습
+ - this ,super에 대한 복습
+ - instance 묵시적 형변환
+ - static , abstract 간단 정리
+ - 버스차지를 이용해 다형성 복습 
+
+---
+
+## abstract class - 추상 클래스
+
+> 인스턴스 생성불가
+
+## interface 
+> pure abstract class - 순수한 추상클래스
+
+ - abstract를 생략
+ - 상속, 공유가 불가.
+ - 리얼리제이션을 구현
+ - 구현되지않는 것을 실체화 함.
+ - 특별한 클래스
+ - 추상된 기능을 빼놓는 것.
+ - 기능을 통일을 위한 인터페이스 사용
+ - modeling시 기능의 정의를 해서 재사용성을 높힘
+ 
+왜? 그 기능을 다른곳에서 쓰기 위해.
+
+tv - 볼륨
+라디오 - 볼륨
+ㅁㅁㅁ - 볼륨
+
+ 일반화 되지않는 것에 상속을 해 abstract 하는것보다 인터페이스를 이용해 볼륨 이라는 기능만 정의해 놓으면 어디서든 쓸수 있다.
+
+Specialization Generalization Realization  = is a~는 ~이다. 키워드가 있음. extends , implements
+
+dependency Association = 테크닉
+
+dependency
+
+public void charge() {
+	B b = new B(); // 버리는 관계;
+        System.out.println(" :: 500원 \n");
+    }
+
+Association
+
+field 에 B b = new B();// 갖고 다니는 관계.
+public void charge() {
+	this.b~ // 
+        System.out.println(" :: 500원 \n");
+}
