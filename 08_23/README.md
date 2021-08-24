@@ -1,10 +1,28 @@
 # 08_23 수업 정리
-
+1. 아스키코드, 인코딩, 디코딩, 다이아몬드 프라블럼
+2. abstract class 
+3. interface 
+4. ~is a~ 
+5. dependency, Association 
+6. toString()
+7. equals()
+---
 ## 용어 정리 해야할 것들
 	ASCII code - 아스키코드
 	인코딩
 	디코딩
 	다이아몬드 프러블럼
+    인스턴스 변수
+	멤버변수
+	localVariable 
+	Garbage 
+	garbage collector 
+	garbage collection 
+
+---
+## Object class 
+- `java의 최상위 class`다. (API의 최상위 클래스)
+
 ---
 ## 수업 복습
 
@@ -31,7 +49,22 @@
  - 기능을 통일을 위한 인터페이스 사용
  - modeling시 기능의 정의를 해서 재사용성을 높힘
  - 다중 상속 가능.
- 
+  ---
+- 인터페이스에 모든메서드는 abstract 가 붙는다.
+- field 는 final static 이 붙는다.
+- 인터페이스는 완전한 추상 메서드
+- `abstract는 어떤것은 추상 어떤것은 일반 메서드`.
+
+**Deposit,PayOut 이 Interface일 때** - ** **08_17 part08 참고** **
+```java
+	System.out.println(Deposit.deposit);    //==>static의 접근방식은 ?
+	System.out.println(hb.payOut);          //==>static의 접근방식은 ?
+
+	//field 의 상태값을 변경해보자.
+	Deposit.deposit="입금";
+	PayOut.payOut="출금";
+	//==> compile Error 발생 interface에 선언되는 변수는 final static의 특징을 갖음
+```
 ### 왜 써? 
  > 그 기능을 다른곳에서 쓰기 위해.
 
@@ -67,42 +100,6 @@ public class Changyeol{
  	}
 }
 ```
-## Interface
-- 인터페이스에 모든메서드는 abstract 가 붙는다.
-- field 는 final static 이 붙는다.
-- 인터페이스는 완전한 추상 메서드
-- `abstract는 어떤것은 추상 어떤것은 일반 메서드`.
-
-**Deposit,PayOut 이 Interface일 때** - ** **08_17 part08 참고** **
-```java
-	System.out.println(Deposit.deposit);    //==>static의 접근방식은 ?
-	System.out.println(hb.payOut);          //==>static의 접근방식은 ?
-
-	//field 의 상태값을 변경해보자.
-	Deposit.deposit="입금";
-	PayOut.payOut="출금";
-	//==> compile Error 발생 interface에 선언되는 변수는 final static의 특징을 갖음
-```
-
-용어 정리 할것
-
-## 인스턴스 변수
-- 멤버변수
-- field에 있다
-## localVariable 
-- 지역변수 클래스영역 이외의 영역
-- 메서드. 생성자, 초기화 블럭 내부
-- 초기화가 되지않으면 사용할때 에러가 발생한다.
-
-## Garbage 
-- 메모리에 떠있고 사용할수 없는 istance 를 말한다
-## garbage collector 
-- Java에서는 개발자가 프로그램 코드로 메모리를 명시적으로 해제하지 않기 때문에 더 이상 필요 없는 객체를 찾아 지우는 작업을 하는 애
-## garbage collection 
-- JVM의 가비지 컬렉터가 불필요한 메모리를 알아서 정리
-
-## Object class 
-- `java의 최상위 class`다. (API의 최상위 클래스)
 
 ## toString()
 - reference변수를 찍으면 내부적으로 toString()을 찍는다.

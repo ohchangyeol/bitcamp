@@ -1,0 +1,177 @@
+생성자를 만들지않으면 자동으로 만들어지지만 개발자가 생상자를 하나라도 오버로딩을 하면 자동으로 생성되지않는다.
+
+개발할때 default의 기본 개념을 알고있는사람과 모르는사람은 큰 차이가 있다.
+
+
+
+용어 정리 할것들
+
+파씡?????
+Syntex
+레퍼런스 카운터 = 식별성의 개수
+Concrete Methods - api에서 Concrete Methods란 ? 추상화(abstract 나 interface)된 메서드를 오버라이딩 한것.
+스넵케이스??? 대문자ㅋ ?ㅋ ㅋ 
+상수는 카멜케이스를 따르지않는다.**추가**
+Deprecated. api에서 쓰지말고 다른것을 쓰기바람
+객체 -물리적인,개념적인,소프트적인
+래퍼클래스
+<E> 엘리먼트의 약자
+<> 제네릭
+
+어쏘세이션 예시
+```
+public class CallByReferenceTest {
+
+	///Field
+	int number = 100;
+
+	public void referenceChange(CallByReferenceTest value) {
+		System.out.println("============================");
+		value.number = 100 + value.number;
+		System.out.println("value : "+value.number);
+		System.out.println("============================");
+	}
+
+	public static void main(String[] args) {
+		CallByReferenceTest call = new CallByReferenceTest();
+
+		call.referenceChange(call);
+		System.out.println("number : "+call.number);
+	}
+}
+```
+
+디펜더시 에시
+```
+public class CallByValueTest {
+
+	///Field
+	int number = 100;
+
+	public void valueChange(int value) {
+		System.out.println("============================");
+		value = value + 100;
+		System.out.println("value : "+value);
+		System.out.println("============================");
+	}
+
+	public static void main(String[] args) {
+		CallByValueTest call = new CallByValueTest();
+
+		call.valueChange(call.number);
+		System.out.println("number : "+call.number);
+	}
+}
+```
+
+
+
+가비지컬랙션 매커니즘
+> 레퍼런스 카운터가 0인것을 JRE가 가비지로 인식하고 바로 삭제에 들어간다
+
+문자열 병합
+String은 정적
+ 불변? 레퍼런스 끊고 다시 새로운것을 연결.
+
+StringBuffer은 동적
+16개 방 만들고 그 값에 동적으로 붙히기 할수있음 
+
+어떨 때는 string이고 어떨때는 buffer일까?
+그것을 간단하게 생각하자.
+짧고 간단하고 자주 합치지 않을 상태값을 string
+자주 합치고 하는것 buffer 
+왜용?~
+>자주 합치는것을 string 쓰면 가비지가많이 발생하기 때문이다.
+
+인스턴스생성 제한에 대해서 ...
+생성자를 접근 제어자인 프라이빗으로 막거나 추상클래스인 abstract로 막을수있다
+
+엡스트랙트의 용도는 두가지????
+- 추상화의 용도
+- 엡스트랙트 생성하지마!! 라는 의미도 쓰일 수 있음.
+
+
+
+## 래퍼클래스
+> ```equals(Objcet obj );``` 에는 int 같은 (프리미티브)기본형타입은 넣을수 없다. 그 대신 `래퍼클래스`를 이용해 객체로 감쌀수 있다.
+
+## API
+
+### String의 method
+
+- concat(String str)
+>앞에있는 문자열에 파라미터값을 병합
+- substring(int beginIndex) **항상 숫자는 0부터시작**
+>index부터 끝까지 반환
+- indexOf(String str)
+> 안에 파라미터가 시작한 index 번호
+
+## Vector ? 
+ > 배열. 그렇다면 array랑 무슨 차이가 있을까 ?
+- 배열 
+ - 소프트웨어객체?
+ - 같은 타입만 묶음
+ - 크기변경 불가. 한번 만들어진 배열은 증가가 안됨. 그래서 초반에 잘만들어야함
+
+- Vector  
+ - 다른 데이터 타입을 넣을수 있음
+ - 크기 변경 가능 
+
+
+### Vector의 method
+
+Vector(int initialCapacity, int capacityIncrement) 
+초기값은 5개이지만 부족하면 5개씩 증가.
+capacity() 
+> 방의 개수를 int로 반환
+vector.size(); 
+> 값이 들어가있는 방의 개수
+elementAt(int index) 
+>리턴 타입은 오브젝트, 안에 뭐가 들어가있는지 몰라서 리턴할때 오브젝트로 리턴한다.
+insertElementAt(Object obj, int index) 
+> 해당 인덱스에 넣기. 대신 뒤에있는 값들이 뒤로 밀린다.
+setElementAt(Object obj, int index);
+> 해당 인덱스의 값으로 바꿔준다.
+removeElementAt(int index)
+> 해당 인덱스의 방을 지운다.
+
+반복문의 Enhanced For Loop 
+> (반환된 값을 담는 변수 : 길이를 말하는 수)
+> 백터 내부에 저장된값을 size() 만큼 반복, 1EA추출 후 Object에 담는다.
+> array 같은 경우 length를 확인 후 길이 만큼 반복한다.
+```
+for (Object obj : vector ){
+  System.out.print((String)obj);
+}
+```
+
+```
+public static void main (String[] args){
+	int[] arr = {1,5,7,3,7};
+	int leng = 10;
+	for (int i : arr){
+		System.out.println(i);
+	}
+	//for(int ex : leng){
+	//	System.out.print(ex + ", ");
+	//}
+}
+```
+> error : ArrayTest.java:10: error: for-each not applicable to expression type  
+> required: array or java.lang.Iterable
+
+>> for-each의 유형에 맞지 않다.  배열에만 적용 가능하다.
+
+
+<>에 대해.
+
+vector의 의도는 여러가지 데이터 타입을 넣을수 있게 만들었는데 정작 써보니 출력을 할때 명시적 캐스팅을 해줘야 하는데 너무 귀찮아서 결국 같은 데이터 타입만 넣고  형변환을 하고 출력을 한다.
+그것을 보안한게 Vector<E> 엘리먼트 값을 지정해줌으로서 묵시적 명시적 캐스팅을 안해도 된다.
+<> 이것을 제네릭이라 한다 .
+제네릭 기능을 씀으로서 명시적 묵시적 형변환을 안해서 좀 편해진다. 
+
+그래서 형변환을 사용시
+VectorTest01refactoring.java:29: warning: [unchecked] unchecked call to add(E) as a member of the raw type Vector
+라는 경고메세지가 뜬다. 
+
+<String> 이라고 지정을 해주면 그 Vector든 뭐든 오브젝트로 잡는것이 아닌 제네릭으로 지정해준 String 만 들어갈수 있다. 

@@ -33,6 +33,31 @@
 - 식별자 or 고유의 이름.
 - numbering을 하지않는다.
   
+  ###  Camel Case ( 카멜 케이스 )
+  > 첫번 째 단어는 소문자 두번재 단어부터는 대문자.  
+  낙타 등처럼 생겼다 해서 붙혀진 이름
+  ```java
+  String userList;
+  String newTodoList;
+  ```
+  주로 변수명, 메소드에 쓰인다.
+  
+  ### Pascal Case ( 파스칼 케이스 )
+  > 단어마다 번번째는 대문자로 쓰는것
+	```java
+	public class TserList{}
+	public class TodoList{}
+	```
+	보통 클래스명에 쓰임
+
+  ### Snake Case ( 스네이크 케이스 )
+  > 단어를 _ 로 나눔
+	```java
+	user_list , new_todo_lsit
+	final int USER_LIST;
+	```
+	보통 파일명이나 상수에 주로 쓰인다.  
+  
 ## JRE ( Java SE Runtime Environment )
 - 자바를 돌아가는 환경.
 - `java API`와 `VM (버츄얼 머신)`을 합친 것
@@ -119,8 +144,7 @@
 ## Hard coding ( 하드코딩 )
 - 조건에 값을 대입하는 것
 
-## Camel Case(카멜 케이스)
-- `Identity Fire`할 때 낙타등처럼 단어씩??마다 대문자를 섞는 것
+
 
 ## Sorting ( 소팅 )
 - 정렬
@@ -466,11 +490,13 @@
 ## 분산 환경 
 
   - 네크워크를 통해 여러 os 가 모인 환경.
+---
+# 08_23 용어
 
 ## ASCII Code ( 아스키 코드 )
 > 컴퓨터는 0과 1 밖에 모르기에 문자도 숫자로 기억해서 어떤 숫자와 문자를 대응시키기 위해 통상 아스키 코드 방식을 많이 사용한다.
 
-## Incoding ( 인코딩 )
+## Encoding ( 인코딩 )
 > 사용자가 입력한 문자나 기호들을 컴퓨터가 볼 수 있는 0과 1로 변환 하는 과정.  
 > 그것을 통상 많이 쓰는 것이 `아스키 코드`?
 ## decoding ( 디코딩 )
@@ -554,10 +580,7 @@
 	KS는 나사다?????
   -  ~ 는 ~ 이다 (~is a~) 관계 형성	
   - `exteds`, `implements` 라는 keyword 존재.
-	
-	
  
-
 ## Association
  > **~has a~ 관계**
 
@@ -588,6 +611,60 @@
  	}
  }
  ```
+ ---
+# 08_24 용어
 
+## Garbage 
+- 메모리에 떠있고 사용할수 없는 istance 를 말한다
+## garbage collector 
+- Java에서는 개발자가 프로그램 코드로 메모리를 명시적으로 해제하지 않기 때문에 더 이상 필요 없는 객체를 찾아 지우는 작업을 하는 애
+## garbage collection 
+- JVM의 가비지 컬렉터가 불필요한 메모리를 알아서 정리
 
+## parsing (파싱)
+ - 분석하거나 하나 하나 씩을 나누는 것을 말한다.
+ - 
+## 레퍼런스 카운터 
+- 식별성의 개수
+## Concrete Methods 
+- api에서 Concrete Methods란 ? 
+  >추상화(abstract 나 interface)된 메서드를 오버라이딩 한것.
+## Deprecated 
+- API에서 사용되지 않으니 다른것을 쓰기바람.
+## Wrapper Class - 래퍼클래스
+ > Java의 데이터 타입은 기본형 타입(primitive type)과 참조형 타입(reference type)으로 나눠지는데 기본 데이터 타입을 객체로 표현해야 하는 경우가 있는데 이럴 때에 기본형 타입을 객체로 다루기 위해 사용하는 클래스들을 말한다.
+
+  |기본타입 | 래퍼 클래스|
+  |:------:|:------:|
+  |byte|Byte|
+  |char|Character|
+  |int|Integer|
+  |float|Float|
+  |double|Double|
+  |boolean|Boolean|
+  |long|Long|
+  |short|Short|
+
+## <> - generic
+>데이터 형식에 의존하지 않고, 하나의 값이 여러 다른 데이터 타입들을 가질 수 있도록 하는 방법
+- 묵시적으로 변한 객체를 명시적 캐스팅을 하지않고 형변환을 도와주는 것 . 즉 타입을 체크하고 변환이 필요 없다. 
+- 제네릭을 사용하면 잘못된 타입이 들어올 수 있는 것을 컴파일 단계에서 방지할 수 있다.
+- 비슷한 기능을 지원하는 경우 코드의 재사용성이 높아진다.
+
+	|타입 |설명|
+	|:------:|:------:|
+	|`<T>`|Type|
+	|`<E>`|Element|
+	|`<K>`|Key|
+	|`<V>`|Value|
+	|`<N>`|Number|
+ 
+
+### 1.5 이후 형변환을 사용시
+```
+VectorTest01refactoring.java:29: warning: [unchecked] unchecked call to add(E) as a member of the raw type Vector
+```
+>라는 경고메세지가 뜬다. 
+
+>`<String>` 이라고 지정을 해주면 그 들어오는 객체는 오브젝트로 잡는것이 아닌 제네릭으로 지정해준 String 만 들어갈수 있다. 
  
