@@ -1,0 +1,206 @@
+#08_25 수업정리
+
+1. ArrayList  
+2. 자료구조 
+3. class Stack
+3. List
+4. Set
+5. Map
+6. 오토박싱 언박싱
+7. Exception(예외)처리
+	StackTrace
+	try-catch
+	try-catch-finally
+	throws 
+8. FileReader
+9. Exception은 2가지 계열
+	체크
+	언체크
+10. inner class
+
+--- 
+
+용어 정리 해야할 것들
+	Collection class
+	자료구조 = Collection?
+	Stack = FILO - 첫번째 들어간것은 마지막에 나온다. ex) 컵 
+	Queue = FIFO - 첫번째 들어가면 첫번째로 나온다. ex ) 터널
+	**StackTrace**
+	thread 추적
+	inherited 
+	핸들링 -처리
+
+ArrayList  = Vector
+
+interface - List<E>
+
+List l = new Vector();
+	new ArrayList();
+
+개인적 궁금한것
+?????? List는 인터페이스가 아닌가??? 인터페이스도 데이터 타입으로 가능한가?
+
+**인터페이스, 상속 으로 데이터 타입을 잡으면 인터페이스의 오버라이딩 된 기능은 사용할수 있다.**
+
+**중요**인터페이스와 추상클래스는 데이터타입으로 가능하나, 인스턴스생성이 불가능한 것.
+
+자료구조 = Collection?
+
+Stack = FILO - 첫번째 들어간것은 마지막에 나온다. ex) 컵
+	
+ 
+Queue = FIFO - 첫번째 들어가면 첫번째로 나온다. ex ) 터널
+
+<img 참고>
+
+## Interface List<E>
+	List 는 index구조 관리 함. 
+	List 만 알면 배열관리는 다 쓸수있다.
+### Class Stack<E>
+첫번째 들어간 것은 마지막에 나온다.
+**컵**
+- push(E item)
+item을 prepend 한다. 말 그대로 푸쉬 해서 맨위로 밀어 넣는 의미를 가진 메서드. 
+- size()
+저장된 data(item)의 개수
+- pop()
+맨 위에 있는 개체를 제거하고 해당 개체를 이 함수의 값으로 반환한다.  
+-peek()
+맨 위에 있는 개체를 제거하지 않고 이 스택의 맨 위에 있는 개체를 말한다.
+-isEmpty()
+Vector 의 메서드. 저장된 data의 수가 0 이면 true 
+> pop()과 peek()의 차이점은 그 값을 없애냐 없애지않냐의 차이
+
+  ```java 
+  stack.isEmpty()
+  stack.size() == 0;
+  ```
+
+## Interface Queue<E>
+### Class LinkedList<E>
+Queue - 첫번째 들어간 것은 첫번째로 나온다.
+**터널**
+-offer(E item) 
+item을 순서대로 append한다.
+- poll()
+첫번째 요소를 검색하고 제거합니다.
+-peek();
+- 첫번째 요소를 검색하지만 제거하지 않는다.
+
+## Interface Map<K,V>  
+	key와 value 를 관리함
+### Class Hashtable<K,V>
+k = key, v = value를 의미
+맵 구조의 data 저장  
+Map 
+- put(K key, V value)  
+지정된 값을 이 맵의 지정된 키와 연결합니다
+- get(Object key)
+지정한 키가 매핑되는 값을 반환하거나, 이 지도에 키에 대한 매핑이 없는 경우 null을 반환합니다.
+- containsKey(Object key)
+이 지도에 지정된 키에 대한 매핑이 포함되어 있으면 true를 반환합니다.
+- containsValue(Object value)
+이 해시 테이블이 하나 이상의 키를 이 값에 매핑하면 true를 반환합니다.
+
+## Interface Set<E> 
+	자료를 관리하는 개념으로 `중복된 것을 제외`하고 받는다.
+## Class HashSet<E>
+중복을 허용하지 않는 자료 저장  
+Set
+
+-add(E e)
+지정한 요소가 아직 없는 경우 이 세트에 추가합니다(선택 사항 작업).
+-contains(Object o)
+이 집합에 지정된 요소가 포함되어 있으면 true를 반환합니다.
+ **equals와 차이**
+```
+if( __.contains("b") ){
+ ...
+}
+
+for(int = i =0; i ___.length; i++){
+ if ( ___[i].equals("b") ){
+   ....
+ }
+}
+```
+하나하나 비교해야 하는 수고를 덜어줌.
+
+-remove(Object o)
+저장된 data에서 해당 o를 삭제한다.
+
+
+## 오토박싱 언박싱
+래퍼 클래스의 활용?
+>제네릭과 환상
+```java
+int i = 1;
+Integer integer = new Integer(i);
+int j = integer.intValue();
+```
+
+```
+Integer integer = 1    
+int j = integer
+```
+
+## Exception(예외)처리
+견고한 app을 만듬?
+
+StackTrace
+> 실행했는데 문제가 발생하면 jvm이 예외가 발생한 부분에 new Exception 을 생성하고 Throw 라는 키워드로  에러를 던져준다.
+
+try-catch
+문제가 발생하면 catch를 해서 해결하는 용도? 
+다중캐치를 할땐 하위를 맨위로 맨 아래는 다 잡을수 있는 Exception 생성
+
+throws
+폭탄 던져주기ㅋㅋㅋ????
+Exception 나온 에러를 호출 부분에 던져줌으로 안에서 메서드에서 끝나는것이 아닌 호출부에서 끝나게 된다. 
+-throws하면 catch 는 무조건 Throwable 부터 가능.
+어찌됬던 try-catch 한테 던져야함.
+
+throw
+예외를 발생시키는 키워드
+
+try-catch-finally
+예외처리가 발생하던 하지않던 무조건 실행해야 하는 것을 finaly에 해야한다.
+```
+finally{
+			System.out.println("여기는 fileRead() :: Exception이 발생하던 말던 나는 실행");
+		}
+```
+뒤에 작성하는것과의 차이 ...
+- 만약 try-catch 에 return한다면 finally 은 실행하고 뒤에 붙은것은 실행 하지않는 것의 차이
+##FileReader
+
+Exception은 2가지 계열
+컴파일 Exception은 체크 - 사용자의  실수
+런타임 Exception은 언체크 - 프로그래머의 실수
+아닌것은 체크
+
+##inner class 
+클래스안에 클래스가 있는것.
+- 멤버($) 
+클래스 안에 field와 method 가 있어야 하는데 class 가 있는 구조
+- 로컬  = $1className
+클래스 안에 field와 method가 있는데 method 안에 클래스가 들어있는 구조.
+-어너미머스? (익명) = $넘버링
+
+```
+public class B extends A{
+	public void def(String message){
+		System.out.println("::Hi"+message);
+	}
+}
+new B().abc("Hello");
+```
+```
+
+new A(){
+	public void def(String message){
+		System.out.println("::Hi"+message);
+	}
+}.abc("Hello");
+
+```

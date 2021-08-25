@@ -611,7 +611,7 @@
  	}
  }
  ```
- ---
+
 # 08_24 용어
 
 ## Garbage 
@@ -664,7 +664,28 @@
 ```
 VectorTest01refactoring.java:29: warning: [unchecked] unchecked call to add(E) as a member of the raw type Vector
 ```
->라는 경고메세지가 뜬다. 
+라는 경고메세지가 뜬다. 
 
->`<String>` 이라고 지정을 해주면 그 들어오는 객체는 오브젝트로 잡는것이 아닌 제네릭으로 지정해준 String 만 들어갈수 있다. 
+`<String>` 이라고 지정을 해주면 그 들어오는 객체는 오브젝트로 잡는것이 아닌 제네릭으로 지정해준 String 만 들어갈수 있다. 
  
+# 08_25 용어 정리
+
+## 자료구조 - Collection 
+  ### Stack 
+  - FILO - 첫번째 들어간것은 마지막에 나온다. ex) 컵 
+  ### Queue 
+  - FIFO - 첫번째 들어가면 첫번째로 나온다. ex ) 터널
+  
+## StackTrace
+- main을 실행했는데 문제가 발생하면 JVM 이 예외가 발생한 부분에 `new Exception` 을 생성하고 `Throw` 라는 키워드로  에러를 던져준다.
+
+## thread 
+- 추적
+
+## inherited 
+- 상속된...? 
+
+## Handling 
+- 처리
+
+# 08_26 용어 정리
