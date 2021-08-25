@@ -82,7 +82,8 @@ Vector 의 메서드. 저장된 data의 수가 0 이면 true
   
   ```
 
-**pop()과 peek()의 차이점은 그 값을 없애냐 없애지않냐의 차이가 있다.**
+**pop()과 peek()의 차이점은 그 값을 없애냐 없애지않냐의 차이가 있다.**  
+
  <img src="./image/stack.png">
 
 
