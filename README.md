@@ -689,3 +689,17 @@ VectorTest01refactoring.java:29: warning: [unchecked] unchecked call to add(E) a
 - 처리
 
 # 08_26 용어 정리
+
+## IDE 
+- 통합 개발 환경
+
+## Process
+- 간단히 말해서 **실행 중인 프로그램(program)**이다.
+- application이라고도 말할 수 있다.
+
+## Unicode
+- 전 세계의 모든 문자를 컴퓨터에서 일관되게 표현하려고 설계된 산업 표준.  
+   유니코드 협회가 제정한다.
+- UTF-8 ,UTF-16
+  
+# 08_27 용어 정리

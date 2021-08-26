@@ -1,54 +1,50 @@
-//package jp03.part03;
+
+/*
+* FileName : Writer.Test.java
+* 1.byte 처리를 위한  Stream 인 input/output Stream을 이용하여
+* keyboard로 입력, monitor로 출력하는 예...
+* 2.한글 처리(문자 처리)를 위하여 Reader/Writer 계열로 바꾸어 입력,출력
+*/
 
 import java.io.*;
 
-/*
-* FileName : FileInputStreamTest.java
-*/
-public class FileInputStreamTest{
-
-	//main method
+public class WriterTest{
+	//Main method
 	public static void main(String[] args) {
-
-		//File을 읽어들이는 Stream 선언
-		FileInputStream fis = null;
-		//read()수 count 위한 변수
-		int readCount = 0;
-
-		try{
-			fis = new FileInputStream(args[0]);
-
-			While(true){
-				int i = fis.read();
-
-				if(i == -1){// i = -1의 의미는 ==>  API확인할 것.
+		
+		try {
+			// InputStream :: 표준입력장치 추상화한  class
+			 InputStream  inputStream = System.in;
+		    // 문자처리를 위한 Reader로 변경
+			Reader reader = new InputStreamReader(inputStream);
+			
+			//OutputSteram :: 표준출력장치 추상화한  class
+			 OutputStream  outputStream = System.out;
+			// 문자처리를 위한 Writer로 변경
+			 Writer writer = new OutputStreamWriter(outputStream);
+			
+			 System.out.println("입력을 기다립니다....");
+			 
+			while(true) {
+				int i = reader.read();
+				writer.write(i);
+				//writer.flush();
+				
+				if((char)i=='x') {
 					break;
 				}
-
-				char c = (char)i;
-				System.out.prin(c);
-
-				readCount++;
 			}
-
-		    }catch(FileNotFoundException e){
-				e.printStackTrace();
-			}catch(IOException e1){
-				e.printStackTrace();
-			}finally{
-				System.out.println("\n\n================================");
-				System.out.println("\n\n================================");
-				System.out.println("\n\n================================");
-			try{
-				fis.close();
-			}catch (Exception e){
-				e.printStackTrace();
-			}
+			//==> while 문 내부의  flush ()와 밖의 flush()의 의미는?
+			//writer.flush();
+			
+			//Stream close();
+			reader.close();
+			writer.close();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
+		
 	}//end of main
 
 }//end of class
-
-
-{
-}

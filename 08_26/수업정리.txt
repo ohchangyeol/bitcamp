@@ -1,0 +1,83 @@
+# 08_26 수업정리
+
+
+## 용어정리
+
+	IDE - 통합 개발 환경
+	유니코드
+
+# 수업 복습
+
+## java_home  
+이클립스는 자바홈을 잡지않는다
+하지만 다른 것들은 자바 환경변수 지정된 것을 보고 잡는다
+메서드 시그너처는 웬만하면 인터페이스로 하는것이 좋다.
+
+## class path
+ Livraries 와 Order and Export로 설정할 수 있다. 
+
+## eclipse  
+
+이클립스의 버전마다 약간씩 다르다.
+이클립스 전단계 버전이나 전전단계 버전을 선호한다.
+
+## implements
+implements를 받은 클래스는 무조건 오버라이딩을 해야하지만 implements받은 클래스를 추상을 준다면 오버라이딩을 하지않아도 가능하다. 하지만 상속 부터는 오버라이딩을 무조건 해야한ㄷㄷ다ㅏㅏㅏ
+
+## 인터페이스
+인터페이스는 인터페이스끼리 단일상속뿐만이아니라 다중상속까지 가능하다 
+
+##java.lang 
+자바 렝귀지를하는데 기본적으로 지원해주는 도구
+
+## java.tuil
+자바를 하는데 도구를 모아둔것 사용 안할리 없음.
+
+프로세스
+os위에서 실행하는 어플리케이션 프로세스?
+
+##java.io
+외부에서 받고 내부에서 프로세스 밖으로 내보내는 것들이 묶인 모음.
+-특징
+단방향 모델링
+큐구조
+i/o 블럭
+유연한 구조
+4대 최상위 
+InputStream / OutputStream / Reader / Writer
+	1바이트 	       2~3바이트
+			       (문자처리)
+
+### InputStream
+외부에서 가져오는 추상 class. 읽고싶으면 read() 
+
+### outStream
+밖으로 보내는 추상 class 보내고싶으면 write();
+
+### InputStream , outStream 1byte
+
+1바이트 초과 reader 로 읽는다
+1바이트 이상 보내는건은 reader,writer 
+
+---
+## 시스템
+컴퓨터를 추상화 한것
+in은 키보드
+out은 모니터
+
+
+생성자 디폴트값 생성해주자.
+e.printStack 해주자.
+
+## InputStreamReader
+- read(int i)
+읽다
+## OutputStreamWriter
+
+- write(int i)
+기록같은 개념
+
+- flush(); 보내는 개념
+
+- close()
+ 종료시 flush() 하고 종료.

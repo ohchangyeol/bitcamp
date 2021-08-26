@@ -1,14 +1,21 @@
-import java.util.Vector;
+import java.util.*;
 
 public class ArrayCopy{
 	
-	public Vector<String> moveToVector(String[] datas){
-		Vector<String> temp = new Vector(datas.length, datas.length);
-
+	public List<String> moveToVector(String[] datas){
+		List<String> temp = new Vector();
 		for(String str : datas){
-			System.out.println(str);
-			temp.add(0, str);
+			temp.add(str);
 		}
+//		Stack<String> temp = new Stack();
+//		for (int i = 0 ;i <datas.length ;i++ ){
+//			temp.push(datas[i]);
+//		}
+//		for(int i = 0 ; i < temp.length; i++){
+//			System.out.println(temp[i]);
+//		}
+//		
+
 		return temp;//datas;
 	}
 
