@@ -1,7 +1,22 @@
 # 08_26 수업정리
 
 ## 목차
-
+- [JAVA_HOME](#JAVA_HOME을-왜-환경변수로-지정-해야-하는가?)
+- [class path](#class-path)
+- [Method Signature](#Java-Method-Signature)
+- [eclipse](#eclipse)
+- [implements](#implements)
+- [API](#API)
+  - [java.lang](#java.lang)
+  - [java.util](#java.util)
+  - [java.io](#java.io)
+   - [InputStream](#InputStream)
+   - [outStream](#outStream)
+   - [reader](#reader)
+   - [writer](#writer)
+- [process](#process)
+- [System](#System)
+- 
 ---
 
 ## 용어 정리 해야할 것들...
@@ -38,14 +53,13 @@ JAVA 프로그래밍에 필요한 가장 기본적인 클래스들이 묶인 패
 자바를 하는데 어려가지 도구를 추상화 해서 모아둔 패키지.  
 사용 안할리 없음.
 
-프로세스
-os위에서 실행하는 어플리케이션 프로세스?
+
 
 ### java.io
 외부에서 받고 내부에서 프로세스 밖으로 내보내는 것들이 묶인 모음.
 #### **특징**
 - 단방향 모델링
-- 큐구조
+- 큐구조 (FIFO)
 - i/o 블럭
 - 유연한 구조
 - 4대 최상위 
@@ -55,18 +69,29 @@ os위에서 실행하는 어플리케이션 프로세스?
   - Writer
 	
 
-### InputStream
-외부에서 가져오는 추상 class. 읽고싶으면 read() 
+#### InputStream
+외부에서 가져오는 추상 클래스
 
-### outStream
-밖으로 보내는 추상 class 보내고싶으면 write(), flush()
+#### outStream
+밖으로 보내는 추상 클래스
 
-### reader
+#### reader
 영어를 제외한 나머지 언어를 읽을 수 있게 도와주는 추상 클래스
-### writer
+
+#### writer
 영어를 제외한 나머지 언어를 밖으로 보낼 수 있게 도와주는 추상 클래스
 
----
+#### InputStreamReader  
+InputStream을 Reader로 컨버터 해주는 역활을 하는 클래스.
+- read(int i)  
+읽다
+
+#### OutputStreamWriter  
+OutputStream을 Writer로 컨버터 해주는 역활을 하는 클래스.
+
+## process  
+os위에서 실행하는 어플리케이션 프로세스?
+
 ## System
 컴퓨터를 추상화 한 클래스  
 
@@ -74,17 +99,3 @@ os위에서 실행하는 어플리케이션 프로세스?
   키보드
 - out  
   모니터
-
-## InputStreamReader
-- read(int i)  
-읽다
-## OutputStreamWriter
-
-- write(int i)  
-기록같은 개념
-
-- flush()   
-  보내는 개념
-
-- close()  
- 종료시 flush() 하고 종료.
