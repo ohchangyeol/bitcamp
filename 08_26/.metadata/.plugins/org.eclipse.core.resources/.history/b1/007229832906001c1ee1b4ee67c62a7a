@@ -1,0 +1,19 @@
+package phone;
+public class SmartPhone extends CellPhone {
+	// Field
+	private boolean isMonthlyFixedRate;
+	private int MonthlyFixedFee;
+	
+	// Constructor
+
+	public SmartPhone(boolean isMonthlyFixedRate, int monthlyFixedFee) {
+		super();
+		this.isMonthlyFixedRate = isMonthlyFixedRate;
+		MonthlyFixedFee = monthlyFixedFee;
+	}
+	// getter
+
+	// setter
+
+	// method
+}

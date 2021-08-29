@@ -1,21 +1,23 @@
 # 08_26 수업정리
 
 ## 목차
-- [JAVA_HOME](#JAVA_HOME을-왜-환경변수로-지정-해야-하는가?)
-- [class path](#class-path)
-- [Method Signature](#Java-Method-Signature)
-- [eclipse](#eclipse)
-- [implements](#implements)
-- [API](#API)
-  - [java.lang](#java.lang)
-  - [java.util](#java.util)
-  - [java.io](#java.io)
-   - [InputStream](#InputStream)
-   - [outStream](#outStream)
-   - [reader](#reader)
-   - [writer](#writer)
-- [process](#process)
-- [System](#System)
+  - [JAVA_HOME을 왜 환경변수로 지정 해야 하는가?](#java_home을-왜-환경변수로-지정-해야-하는가)
+  - [class path](#class-path)
+  - [Java Method Signature](#java-method-signature)
+  - [eclipse](#eclipse)
+  - [implements](#implements)
+  - [API](#api)
+    - [java.lang](#javalang)
+    - [java.util](#javautil)
+    - [java.io](#javaio)
+      - [InputStream](#inputstream)
+      - [outStream](#outstream)
+      - [reader](#reader)
+      - [writer](#writer)
+      - [InputStreamReader](#inputstreamreader)
+      - [OutputStreamWriter](#outputstreamwriter)
+  - [process](#process)
+  - [System](#system)
 
 ---
 

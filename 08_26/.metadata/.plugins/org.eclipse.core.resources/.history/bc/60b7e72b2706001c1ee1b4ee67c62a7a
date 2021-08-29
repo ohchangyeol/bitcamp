@@ -1,0 +1,13 @@
+public class SmartPhone extends CellPhone{
+	//Field
+	private boolean isMonthlyFixedRate;
+	private int MonthlyFixedFee;
+
+	//Constructor
+
+	//getter
+
+	//setter
+
+	//method
+}

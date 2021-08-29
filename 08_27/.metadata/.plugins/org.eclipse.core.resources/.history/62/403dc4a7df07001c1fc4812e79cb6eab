@@ -1,0 +1,32 @@
+package ex1;
+
+public class Prob {
+
+	public static void main(String[] args) {
+		int inputInt = Integer.parseInt(args[0]);
+			
+		
+		for (int i = inputInt ; i > 0 ; i--){
+			System.out.println("*");
+		}
+		
+		
+		
+		
+		
+		
+		
+//		for (int i = 0 ; i < inputInt ; i++){
+//			String sum ="";
+//			for (int j = i ;j < i*2 ; j++){
+//				sum += " ";
+//			}
+//			for (int k = i ; k < inputInt;k++ ){
+//				sum += "*";
+//			}
+//			inputInt--;
+//			System.out.println(sum);
+//		}
+	}
+
+}

@@ -1,0 +1,35 @@
+package ex3;
+import java.util.Vector;
+
+// 문자열 배열의 내용을 역순으로 출력하되 각 문자열또한 역순으로 출력한다.
+
+public class Prob {
+	//Field
+	StringBuffer temp ; 
+	Vector<String> newVector ;
+	// Constructor
+	public Prob() {
+		temp =new StringBuffer();
+		newVector =new Vector<String>();
+	}
+	public Vector<String> dataChange (String[] strData){
+		for(int i = strData.length-1; 0 <= i; i--) {
+			for (int r = strData[i].length(); 0 < r ; r--) {
+				temp .append(strData[i].charAt(r-1));
+			}
+			System.out.println(temp);
+//			temp.delete(1,strData.length-1);
+			temp.setLength(0);
+		}
+		return null; 
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Prob st = new Prob();
+		String[] strData = {"Java Programming","JDBC","Oracle10g","JSP/Servlet"};
+		Vector<String> v = st.dataChange(strData);
+		
+	}
+
+}

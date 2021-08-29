@@ -1,0 +1,44 @@
+package ex4;
+
+import java.io.*;
+import java.util.Vector;
+
+public class FileController {
+	//field
+	String line ;
+//	int count;
+	Vector<String> reverseArr;
+	//constructor
+	public FileController() {
+		reverseArr = new Vector<String>();
+	}
+	
+	//method
+	private void reverseLine(String oldf, String newf) throws Exception {
+		BufferedReader bReader = new BufferedReader(new FileReader(oldf));
+		BufferedWriter bWriter =new BufferedWriter(new FileWriter(newf));
+
+		while ((line =bReader.readLine()) != null) {
+			reverseArr.add(line);
+		}
+		for(int i = reverseArr.size()-1 ;0 <= i ; i--) {
+//			System.out.println(reverseArr.get(i));
+			bWriter.write(reverseArr.get(i));
+		}
+		System.out.println(reverseArr);
+		
+		bWriter.flush();
+		bReader.close();
+		bWriter.close();
+	}
+	public static void main(String[] args) throws Exception  {
+		//local
+		FileController c = new FileController();
+		String oldf ="src/ex4/files/oldf.txt";
+		String newf ="src/ex4/files/newf.txt";
+		c.reverseLine(oldf,newf);
+	}
+
+	
+
+}

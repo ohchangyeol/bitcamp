@@ -1,0 +1,22 @@
+package ex1;
+
+public class Prob {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		for (int i = 0 ; i < Integer.parseInt(args[0]) ; i++){
+			String sum ="";
+			for (int j = i ;j < i*2 ; j++){
+				sum += " ";
+			}
+			for (int k = i ; k < Integer.parseInt(args[0]);k++ ){
+				sum += "*";
+			}
+			inputInt--;
+			System.out.println(sum);
+		}
+	}
+
+}

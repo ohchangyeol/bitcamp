@@ -1,0 +1,25 @@
+package ex4;
+
+import java.io.*;
+
+public class FileController {
+	//field
+	
+	//constructor
+	public FileController() {}
+	
+	//method
+	private void reverseLine(String oldf, String newf) {
+		BufferedReader br = new BufferedReader(FileReader(oldf));
+	}
+	public static void main(String[] args) {
+		//local
+		FileController c = new FileController();
+		String oldf ="files/oldf.txt";
+		String newf ="files/newf.txt";
+		c.reverseLine(oldf,newf);
+	}
+
+	
+
+}

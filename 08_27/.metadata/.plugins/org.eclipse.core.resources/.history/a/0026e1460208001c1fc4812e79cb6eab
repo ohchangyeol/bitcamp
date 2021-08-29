@@ -1,0 +1,35 @@
+package ex4;
+
+import java.io.*;
+
+public class FileController {
+	//field
+	String line ;
+	//constructor
+	public FileController() {
+		line = null;
+	}
+	
+	//method
+	private void reverseLine(String oldf, String newf) throws Exception {
+		BufferedReader bReader = new BufferedReader(new FileReader(oldf));
+		BufferedWriter bWriter =new BufferedWriter(new FileWriter(newf));
+		while ((line =bReader.readLine()) != null) {
+			bWriter.write(line+"\r");
+//			bWriter.newLine();
+		}
+		bWriter.flush();
+		bReader.close();
+		bWriter.close();
+	}
+	public static void main(String[] args) throws Exception  {
+		//local
+		FileController c = new FileController();
+		String oldf ="src/ex4/files/oldf.txt";
+		String newf ="src/ex4/files/newf.txt";
+		c.reverseLine(oldf,newf);
+	}
+
+	
+
+}
