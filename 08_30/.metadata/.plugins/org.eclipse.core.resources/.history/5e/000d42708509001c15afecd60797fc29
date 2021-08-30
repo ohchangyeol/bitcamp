@@ -1,0 +1,51 @@
+package ex1;
+
+public class Prob {
+
+	public String toEncoding(String str) {
+//		String value = "홍길동";
+//		byte[] temp = str.getBytes();
+//		for (byte b : temp) {
+//			
+//			System.out.println(b);
+////			System.out.println(Integer.toHexString(b));
+//		}
+		return null;
+	}
+	
+	// main Method
+	public static void main(String[] args) {
+		// ***************흰트 16진수 변환****************
+//		/*
+		String value = "korea홍";
+		byte[] temp = value.getBytes();
+		for (int i =0; i< temp.length ; i++) {
+			
+			System.out.println(temp[i]);
+//			System.out.println(Integer.toHexString(b));
+//			System.out.print("%"+Integer.toHexString(b).substring(6).toUpperCase());
+			
+		}
+//		System.out.println(Integer.toHexString(temp[0]));
+//		System.out.println(Integer.toHexString(temp[1]));
+//		System.out.println(temp.length);
+		
+//		value ="A";
+//		temp = value.getBytes();
+//		System.out.println(Integer.toHexString(temp[0]));
+//		*/
+		// ***************흰트 16진수 변환****************
+//		Prob p1 = new Prob();
+//		System.out.println("입력 : Korea");
+//		System.out.println("출력 :"+p1.toEncoding("Korea"));
+//		System.out.println("입력 : 홍길동");
+//		System.out.println("출력 :"+p1.toEncoding("홍길동"));
+//		System.out.println("입력 : 홍길 동");
+//		System.out.println("출력 :"+p1.toEncoding("홍길 동"));
+//		System.out.println("입력 : hong 길 동");
+//		System.out.println("출력 :"+p1.toEncoding("hong 길 동"));
+//		System.out.println("입력 : 0319");
+//		System.out.println("출력 :"+p1.toEncoding("0319"));
+	}
+
+}

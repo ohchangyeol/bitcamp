@@ -1,0 +1,27 @@
+package ex3;
+
+import java.io.FileInputStream;
+import java.io.FileReader;
+
+public class FileCalculator {
+	
+	public void addCalculateResult(String inputFileName)throws Exception {
+		FileInputStream fi = new FileInputStream(inputFileName);
+//		for(int i =0; i < 3 ; i++) {
+//			System.out.println((char)fi.read());
+//			
+//		}
+		while (true) {
+			if(fi.read() == -1) {
+				break;
+			}
+			char c = (char)fi.read();
+			System.out.print(c);
+		}
+	}
+	public static void main(String[] args) throws Exception{
+		FileCalculator fc = new FileCalculator();
+		fc.addCalculateResult("D:\\BackUp_bitcamp\\08_30\\work\\test.dat");
+	}
+
+}

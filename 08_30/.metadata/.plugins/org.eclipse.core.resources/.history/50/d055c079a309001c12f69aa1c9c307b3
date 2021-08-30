@@ -1,0 +1,28 @@
+package ex3;
+
+import java.io.*;
+
+
+public class FileCalculator {
+	
+	public void addCalculateResult(String inputFileName)throws Exception {
+		BufferedReader br =new BufferedReader(new FileReader(inputFileName));
+		BufferedWriter bw =new BufferedWriter(new FileWriter(inputFileName, true));
+		int sum = 1 ;
+		int add = 0 ;
+		String ch = "";
+		while (true) {
+			if((ch = br.readLine()) == null) {
+				
+			}else {
+				add += Integer.parseInt(ch);
+				sum *= Integer.parseInt(ch);
+			}
+		}
+	}
+	public static void main(String[] args) throws Exception{
+		FileCalculator fc = new FileCalculator();
+		fc.addCalculateResult("D:\\BackUp_bitcamp\\08_30\\work\\test.txt");
+	}
+
+}

@@ -670,3 +670,32 @@ application이라고도 말할 수 있다.
 
 전 세계의 모든 문자를 컴퓨터에서 일관되게 표현하려고 설계된 산업 표준.    
 유니코드 협회가 제정한다.
+
+## URL 
+**Uniform Resource Locator**  
+웹 주소라고도 하며, 컴퓨터 네트워크 상에서 리소스가 어디 있는지 알려주기 위한 규약.  
+URI의 서브셋이다.
+## URI
+**Uniform Resource Identifier**
+통합 자원 식별자  
+인터넷에 있는 자원을 나타내는 유일한 주소.  
+논리적 또는 물리적 리소스를 식별하는 고유한 문자열 시퀀스
+## 스트림 
+책 624 보기
+## Protocol (프로토콜)
+클라이언트와 서버간의 **통신 규약(약속)**  
+"##”를 **구분자**로 문자열을 토큰하여 문자를 분석하는 것 
+
+## Interface - runnanle
+Runnable는 구현할 메소드가 run() 하나 뿐인 함수형 인터페이스.  
+**Thread를 extends(상속) 하지 못할 때** Runnable 인터페이스를 사용한다.   
+
+## Marker interface 
+>Serializable , SomethingObject
+
+구현할게 없는 인터페이스 
+
+## Thread Scheduler (스레드 스케줄러)
+cpu를 만나게 도와주는 공간? 다른말로 runnable이라고 쓰일수도 있는 것 같다.  
+ **JVM**이 run에 올리고 내리고 하는 역활을 해줌.
+    
