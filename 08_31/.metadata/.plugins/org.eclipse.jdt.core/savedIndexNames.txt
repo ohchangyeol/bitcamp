@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+F:\BackUp_bitcamp\08_31\.metadata\.plugins\org.eclipse.jdt.core
+1238065739.index

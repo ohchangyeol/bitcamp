@@ -1,0 +1,49 @@
+package ex1;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+
+
+public class Grade {
+	//Field
+	BufferedReader br;
+	String textLine = "";
+	//constructor
+	public Grade() {
+		
+	}
+	public void printGrade(String fileName) throws FileNotFoundException,IOException{
+		br = new BufferedReader(new FileReader(fileName));
+		HashMap<String, Integer> datas = new HashMap<String, Integer>();
+		int sum = 0;
+		while ((textLine = br.readLine()) != null) {
+			String[] data = textLine.split(","); 
+			datas.put(data[0],Integer.parseInt(data[1]));
+			System.out.println(datas.get(String));
+			
+		}// end of while 
+		
+		
+		
+		
+	}
+	public static void main(String[] args) {
+		Grade grade = new Grade();
+		String fileName = "score.txt";
+		try{
+			grade.printGrade(fileName);
+		}catch (FileNotFoundException e) {
+			e.getStackTrace();
+		}catch (IOException e) {
+			e.getStackTrace();
+		}catch (Exception e) {
+			e.getStackTrace();
+		}
+	}
+
+	
+
+}

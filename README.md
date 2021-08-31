@@ -699,3 +699,30 @@ Runnable는 구현할 메소드가 run() 하나 뿐인 함수형 인터페이스
 cpu를 만나게 도와주는 공간? 다른말로 runnable이라고 쓰일수도 있는 것 같다.  
  **JVM**이 run에 올리고 내리고 하는 역활을 해줌.
     
+## DBMS
+DBMS는 **DataBase Management System**의 약자로 **데이터 베이스를 관리하는 시스템**이다.
+## RDBMS
+> Oracle , MySQL , Microsoft SQL Server , PostgerSQL , 등등 있다.
+- RDB를 생성하고 수정하고 관리할 수 있는 소프트 웨어.
+- RDBMS는 Relational DataBase Management System의 약자로 **관계형 모델을 기반으로 하는 DBMS유형**
+- 
+## HDBMS
+- 계층형 데이터 베이스 관리 시스템.
+- 하이라키 구조로 되어 있어 데이터의 엑세스 속도가 빠르고 데이터의 사용량을 쉽게 예측 가능.
+- 상하 종속 관계로 구성되어있어 초기 세팅 후 변화하는 프로세스를 수용하기 쉽지않다.
+  
+## ODBMS
+- 객체 지향 데이터베이스 관리시스템.
+- 계층(Class)에 따라 데이터 구조를 표현하고 데이터와 그 조작 절차를 함께 다룬다.
+  
+## Class Diagram ( 클래스 다이어그램 )
+class 모델링  
+**나중에 이미지 찾기 ...**
+
+## SQL :: TABLE, RECORD , COLUMN
+<img src="http://wiki.hash.kr/images/a/a1/%ED%85%8C%EC%9D%B4%EB%B8%94_%EC%84%A4%EB%AA%85.png" width="750">
+
+## table Diagram
+ERD - 테이블 모델링 
+**나중에 이미지 찾기 ... **
+
