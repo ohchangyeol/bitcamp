@@ -1,0 +1,19 @@
+package ex2;
+
+public class Prob2 {
+	//method
+	public static int[] generateRandomNumber() {
+		
+		return null ;
+	}
+	public static int[] printStatistics(int [] array) {
+			
+		return null ;
+	}
+	
+	//main method
+	public static void main(String[] args) {
+		Prob2.printStatistics(generateRandomNumber());
+	}
+
+}

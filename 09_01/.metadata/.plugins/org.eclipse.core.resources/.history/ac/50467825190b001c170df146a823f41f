@@ -1,0 +1,29 @@
+package ex1;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.List;
+import java.util.Vector;
+
+public class Prob1 {
+	BufferedReader br;
+	//method
+	public List<String> getList(){
+		
+		return null;
+		
+	}
+	
+	//main method
+	public static void main(String[] args) {
+		Prob1 e = new Prob1();
+			List<String> scores = e.getList();
+			for(int i = 0; i < scores.size(); i++) {
+				System.out.println(scores.get(i));
+			}
+			
+
+	}
+
+}

@@ -1,0 +1,499 @@
+1. WHERE 조건 :: 연산자 
+
+// ==> 월급 5000 이상 이름 월급 입사일 조회
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE salary >= 5000
+ORDER BY salary;
+
+==> 04-01-01 이후 입사자 이름,월급,입사일 조회
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE in_date >= '2004-01-01'
+ORDER BY in_date;
+
+==> 이름 이순신666 이상 이름,월급, 입사일 조회
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE name >= '이순신666'
+ORDER BY name;
+
+-----------------------------------------------------------------
+
+2. WHERE 조건절 :: 연산자 , 논리연산자 (NOT,AND,OR) <= 우선순위 순서
+
+//==> 04-01-01 이후 입사자 이며 월급이 5000 이상 이름,월급, 입사일 조회
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE in_date > '2004-01-01' AND salary >= 5000;
+
+// 04-01-01 이후 입사자 또는 월급이 5000이상인 자
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE in_date > '2004-01-01' OR salary >= 5000;
+
+// 07-01-01 이후 입사자이며 월급이 5000 이상 또는 관리부 직원
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE in_date > '2007-01-01' AND salary >= 5000 OR dept_name='관리부';
+
+// ==> ()우선순위의 이해
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE in_date > '2007-01-01' AND (salary >= 5000 OR dept_name='관리부');
+
+--------------------------------------------------------------------
+
+3. WHERE 조건절 :: SQL 연산자 BETWEEN A AND B (주의 A < B 일것)
+
+//==> 월급이 1000 ~ 2500 사이 ( 포함 ) 이름,월급, 입사일 조회
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE salary BETWEEN 1000 AND 2500
+ORDER BY salary;
+
+//==> 위와 비교 (주의 A < B) 
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE salary BETWEEN 2500 AND 1000
+ORDER BY salary;
+
+//==> 월급이 1000 ~ 2500 사이를 제외한 이름, 월급, 입사일 조회
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE salary NOT BETWEEN 1000 AND 2500
+ORDER BY salary;
+
+//==> 김유신222 ~ 한국990 사이 이름 조회
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE name BETWEEN '김유신222' AND '한국990'
+ORDER BY name;
+
+//==> 위와 비교 (주의 A < B)
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE name BETWEEN '한국990' AND '김유신222'
+ORDER BY name;
+
+//==> 아래와 비교 
+SELECT name FROM emp_test ORDER BY name;
+
+//==> 김유신222 ~ 한국990을 제외한 이름 조회
+SELECT 
+name 이름, salary 월급 , in_date 입사일
+FROM emp_test
+WHERE name NOT BETWEEN '김유신222' AND '한국990'
+ORDER BY name;
+
+-------------------------------------------------------------------
+
+4. WHERE 조건절 :: SQL 연산자 IN (일치하는 것, 일치하는 것)
+
+// ==> 관리부와 영업부 이름, 부서 조회  
+==> dept_name = '관리부' OR dept_name = '영업부'
+SELECT 
+name 이름, dept_name 부서
+FROM emp_test
+WHERE dept_name IN ('관리부', '영업부')
+ORDER BY dept_name;
+
+// ==> 관리부와 영업부를 제외한 나머지 이름, 부서 조회
+SELECT 
+name 이름, dept_name 부서
+FROM emp_test
+WHERE dept_name NOT IN ('관리부', '영업부')
+ORDER BY dept_name;
+
+---------------------------------------------------------------------
+
+5. WHERE 조건절 :: SQL 연산자 LIKE
+
+==> _ => 하나      % => 다중
+==> 김씨 성을 갖는이름 , 부서 조회
+SELECT 
+name 이름, dept_name 부서
+FROM emp_test
+WHERE name LIKE '김%';
+
+==> 김씨 성을 갖고 이름이 1자인 이름, 부서 조회
+SELECT 
+name 이름, dept_name 부서
+FROM emp_test
+WHERE name LIKE '김_';
+
+==> 김씨성을 갖고 이름이 2자인 이름, 부서 조회
+SELECT 
+name 이름, dept_name 부서
+FROM emp_test
+WHERE name LIKE '김__';
+
+==>가운데가 길인 이름이 3자인 이름, 부서 조회
+SELECT 
+name 이름, dept_name 부서
+FROM emp_test
+WHERE name LIKE '_길_';
+
+-----------------------------------------------------------------------
+
+6. WHERE 조건절 :: SQL 연산자 LIKE 및 KEYWORD
+==> 키워드가 들어간 사람 생성
+INSERT INTO emp_test (name , title) VALUES ('박_%','특수%');
+INSERT INTO emp_test (name , title) VALUES ('김_%','특수%');
+SELECT * FROM emp_test;
+COMMIT;
+
+//==> __% 검색의 결과는 전부다 검색
+SELECT 
+*
+FROM emp_test
+WHERE name LIKE '__%';
+
+// ==> 키워드 ESCAPE 옵션 사용
+SELECT 
+*
+FROM emp_test
+WHERE name LIKE '_\_\%' ESCAPE'\';
+
+SELECT 
+*
+FROM emp_test
+WHERE name LIKE '_?_?%' ESCAPE'?';
+
+-------------------------------------------
+
+SELECT 
+name 이름, in_date 입사일
+FROM emp_test
+WHERE in_date LIKE '%01';
+
+SELECT 
+name 이름, in_date 입사일
+FROM emp_test
+WHERE in_date LIKE '%04';
+
+SELECT 
+name 이름, in_date 입사일
+FROM emp_test
+WHERE in_date LIKE '%0';
+
+-----------------------------------------------------------------------
+
+//==> ALL :: 모두가 만족
+//==> ANY :: 한쪽만 만족해야 한다.
+
+==> 최대값의 의미
+SELECT 
+name 이름, salary 월급
+FROM emp_test
+WHERE salary > ALL(2500,5000);
+
+==> 최소값의 의미
+SELECT 
+name 이름, salary 월급
+FROM emp_test
+WHERE salary > ANY(2500,5000); 
+
+SELECT 
+name 이름, salary 월급
+FROM emp_test
+WHERE salary NOT IN(3333,4444);
+
+SELECT 
+name 이름, salary 월급
+FROM emp_test
+WHERE salary <> ALL(3333,4444); ==> <>는 !=의미
+
+SELECT 
+name 이름, salary 월급
+FROM emp_test
+WHERE salary != ALL(3333,4444);
+
+-----------------------------------------------------------------------
+
+//==============================================//
+//==================== 실   습  ====================//
+//==============================================//
+
+1. 직책 종류 조회
+SELECT 
+name 이름, title 직책
+FROM emp_test;
+
+2. 2001년 입사자 이름, 직책, 입사일 조회
+    (   1번째 QUERY는 LIKE사용
+	2번째 QUERY는 BETWEEN사용   )
+
+==> 1번째
+SELECT 
+name 이름, title 직책, in_date 입사일
+FROM emp_test
+WHERE in_date LIKE '01%';
+
+==> 2번째
+SELECT 
+name 이름, title 직책, in_date 입사일
+FROM emp_test
+WHERE in_date BETWEEN '2001-01-01' AND '2001-12-31';
+
+
+3. 임금이 NULL인 사원의 모든 정보 입사일 오름차순 조회
+
+SELECT 
+name 이름, title 직책,salary 임금, in_date 입사일 , DEPT_NAME 부서
+FROM emp_test
+WHERE salary IS NULL
+ORDER BY IN_DATE;
+
+
+4. 관리부에서 급여가 6000이상 인 사람 이름/급여/부서 조회
+
+SELECT 
+name 이름,salary 급여, DEPT_NAME 부서
+FROM emp_test
+WHERE salary > 6000
+ORDER BY salary;
+
+----------------------------------------------------------------------
+=> 다중행 함수는 NULL 을 무시함
+
+// COUNT(*) 의미 => 레코드수를 리턴해주는 것
+SELECT 
+COUNT(*)
+FROM emp_test;
+
+// 키워드 ROWNUM 이해 
+SELECT 
+ROWNUM , id,name
+FROM emp_test;
+
+// 다중행 함수는 널은 연산대상에서 제외
+SELECT 
+COUNT(*) 레코드,
+COUNT(salary) "월급 수령자",
+COUNT(NVL(salary,0)) "월급 수령자 (NULL포함)",
+COUNT(DISTINCT salary) "월급종류",
+COUNT(DISTINCT NVL(salary,0)) "월급종류 (NULL 포함)"
+FROM emp_test;
+    레코드    월급 수령자	월급 수령자 (NULL포함)	월급종류	   월급종류 (NULL 포함)
+---------- ----------- ---------------------- ---------- --------------------
+        18          12                     18         11                   12
+
+
+// 영업부 인원수 count 조회
+SELECT 
+COUNT(*) 영업부직원1,
+COUNT(dept_name) "영업부직원2",
+COUNT(salary) 영업부직원월급수령자
+FROM emp_test
+WHERE dept_name = '영업부';
+
+==> 아래 비교
+SELECT * FROM emp_test WHERE dept_name = '영업부';
+
+=====> 관리부 월급함 최대/최소/평균 조회
+SELECT 
+SUM(salary) 관리부월급함,
+MAX(salary) 관리부최대월급,
+MIN(salary) 관리부최소월급,
+AVG(salary) 관리부평균월급,
+AVG(NVL(salary,0)) 관리부평균월급,
+FROM emp_test
+WHERE dept_name='관리부';
+
+==> 영업부 다식 확인
+SELECT 
+SUM(salary) 영업부월급함,
+MAX(salary) 영업부최대월급,
+MIN(salary) 영업부최소월급,
+AVG(salary) 영업부평균월급,
+AVG(NVL(salary,0)) 영업부평균월급,
+FROM emp_test
+WHERE dept_name = '영업부';
+
+==> 에러 발생 
+==> 이름은 여러개 / max salary 는 한개
+SELECT 
+name, MAX(salary)
+FROM emp_test
+WHERE dept_name = '관리부';
+
+SELECT 
+dept_name, MAX(salary)
+FROM emp_test
+WHERE dept_name = '관리부';
+==> 일대 다 니까 에러나온다.
+
+==> 똑같은것을 하나로 만들어주는 것이 GROUP BY 
+SELECT 
+dept_name, MAX(salary)
+FROM emp_test
+WHERE dept_name = '관리부'
+GROUP BY dept_name;
+
+==> WHERE 가 없으면 각 부서에 최대가 나온다. 
+SELECT 
+dept_name, MAX(salary)
+FROM emp_test
+GROUP BY dept_name;
+
+==> 부서명 NULL 제외
+SELECT 
+dept_name, MAX(salary)
+FROM emp_test
+WHERE dept_name IS NOT NULL
+GROUP BY dept_name;
+
+//==> 부서명, 각 부서 평균 급여 출력
+SELECT 
+dept_name, AVG(salary)
+FROM emp_test
+WHERE dept_name IS NOT NULL
+GROUP BY dept_name
+ORDER BY dept_name;
+
+--------------------------------------------------------------
+where 조건절 / group by
+멀티 로우 펑션을 쓰면 group by 을 써야한다.
+
+SELECT 
+NVL(dept_name, '<부서배치전>'), AVG(salary)
+FROM emp_test
+WHERE dept_name ='관리부'
+GROUP BY dept_name;
+
+//==============================================//
+//==================== 실   습  ====================//
+//===================HAVING ===================//
+
+1. 부서명 / 부서salary 평균 / 합 /인원수 조회 (부서명 null / 대기발령  제외)
+
+SELECT 
+dept_name 부서명, 
+AVG(salary)" 부서salary 평균",
+SUM(salary) "부서salary 합", 
+COUNT(dept_name) "인원수 조회"
+FROM emp_test
+WHERE dept_name NOT IN('대기발령') AND dept_name IS NOT NULL
+GROUP BY dept_name;
+
+
+
+2. 부서명 / 부서salary 평균 / 합 /인원수 조회 (부서명 null / 대기발령  제외)
+    ==> 인원수가 5이상만 출력
+
+SELECT 
+dept_name 부서명, 
+AVG(salary)" 부서salary 평균",
+SUM(salary) "부서salary 합", 
+COUNT(dept_name) "인원수 조회"
+FROM emp_test
+WHERE dept_name NOT IN('대기발령') AND dept_name IS NOT NULL
+GROUP BY dept_name
+HAVING COUNT(*) >=5;
+
+
+3. 부서명 / 부서salary 평균 / 합 /인원수 조회 (부서명 null / 대기발령  제외)
+     ==> 인원수가 5이상만 출력
+     ==>  평균급여가 5000이상
+
+SELECT 
+dept_name 부서명, 
+AVG(salary)" 부서salary 평균",
+SUM(salary) "부서salary 합", 
+COUNT(dept_name) "인원수 조회"
+FROM emp_test
+WHERE dept_name NOT IN('대기발령') AND dept_name IS NOT NULL
+GROUP BY dept_name
+HAVING COUNT(*) >=5 AND AVG(salary) >= 5000;
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+SELECT 
+c_emp.name , c_emp.dept_id, s_dept.id , s_dept.dept_name
+FROM c_emp ,  s_dept;
+
+SELECT 
+c_emp.name , c_emp.dept_id, s_dept.id , s_dept.dept_name
+FROM c_emp ,  s_dept
+WHERE c_emp.dept_id = s_dept.id;
+
+==> 총무부 만 
+SELECT 
+c_emp.name , c_emp.dept_id, s_dept.dept_name
+FROM c_emp ,  s_dept
+WHERE c_emp.dept_id = s_dept.id AND s_dept.dept_name IN ('총무부');
+
+==> from 에 식별성 추가
+SELECT 
+c.name , c.dept_id, s.id, s.dept_name
+FROM c_emp c,  s_dept s
+WHERE c.dept_id = s.id AND s.dept_name IN ('총무부');
+
+
+//==============================================//
+//================== 실   습 1  ====================//
+//==============================================//
+
+1.  김씨성 직원의  이름 / 부서명 /연봉  조회
+     ==> 연봉:  \250,000 형식 , 연봉높은순 
+
+이름 c 부서명s 연봉 c salary 
+SELECT 
+c.name 이름, s.dept_name 부서명, TO_CHAR( NVL(c.salary,0)*12 , 'L999,999' ) 연봉
+FROM c_emp c,  s_dept s
+WHERE c.dept_id = s.id AND c.name LIKE '김%'
+ORDER BY c.salary DESC;
+
+
+
+2.  월급이 2000이상 직원 부서명 / 이름 /일당 조회
+      ==> 부서별 :: 오름차순
+      ==> 이    름 :: 오름차순
+      ==> 일    당 :: 30일기준, 소수점 0자리 버림, \250,000형식, 높은순 
+
+이름 c 부서명s 연봉 c.salary  c.salary/30 일당 TO_CHAR( NVL(salary,0)/30 , 'L999,999' )
+
+SELECT 
+ s.dept_name 부서명,
+ c.name 이름,
+ c.salary 월급,
+ TO_CHAR( TRUNC( NVL(c.salary,0)/30 ,0), 'L999,999.99' ) 일당
+FROM c_emp c,  s_dept s
+WHERE c.dept_id = s.id AND c.salary >= 2000
+ORDER BY  부서명 ASC, c.name ASC, c.salary DESC;
+
+3. 부서별 평균 월급 부서번호/부서명/평균월급 조회
+     ==> 부서번호 :: 오름차순
+
+SELECT 
+ c.dept_id 부서번호,
+ s.dept_name 부서명,
+ TRUNC(AVG(salary),0) 평균
+FROM c_emp c,  s_dept s
+WHERE c.dept_id = s.id
+GROUP BY s.dept_name, c.dept_id
+ORDER BY 부서번호;
+
+
+4. 총무부 평균 월급  부서번호/부서명/평균월급 조회
+
+SELECT 
+c.dept_id 부서번호, s.dept_name 부서명, TRUNC(AVG(salary),0) 평균
+FROM c_emp c,  s_dept s
+WHERE c.dept_id = s.id AND s.dept_name IN ('총무부')
+GROUP BY s.dept_name, c.dept_id;

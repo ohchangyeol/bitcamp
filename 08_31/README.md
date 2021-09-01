@@ -19,7 +19,8 @@
 
 
 # DBMS의 정의
-DBMS는 **DataBase Management System**의 약자로 **데이터 베이스를 관리하는 시스템**이다.
+DBMS는 **DataBase Management System**의 약자로 **데이터 베이스를 관리하는 시스템**이다.  
+DBMS 플랫폼에 종속적인 개발을 하면 불편한 일이 많아진다.
  ## RDBMS
  - RDB를 생성하고 수정하고 관리할 수 있는 소프트 웨어.
  - RDBMS는 Relational DataBase Management System의 약자로 **관계형 모델을 기반으로 하는 DBMS유형**
@@ -34,7 +35,7 @@ DBMS는 **DataBase Management System**의 약자로 **데이터 베이스를 관
 - 계층(Class)에 따라 데이터 구조를 표현하고 데이터와 그 조작 절차를 함께 다룬다.
 
 ***
-# SQL
+# SQL - 1
 
 ## SQL 이란?
 오라클, mySQL, DB2 전부다 기본적인 SQL은 제공하지만 구체적인 확장 기능이 다르다. 그리고 확장된 기능은 각 확장자에서만 사용할 수 있다.  
@@ -110,6 +111,17 @@ sql 은 표준화 되있지만 오라클에만 접속하는 툴은 `sqlplus` 가
 
 ***
 ## DDL :: TABLE 생성
+>모델링 할때 시간을 많이 투자하지만 그 후 잘 사용하지않는다.
+
+구조??
+```sql
+  /*c/n     data Type    keyword    조건 이름            key                   */
+    id	    NUMBER(5)	CONSTRAINT	c_emp_id_pk		    PRIMARY KEY,
+	name	CHAR(15)	CONSTRAINT	c_emp_name_nn		NOT NULL,
+	salary	NUMBER(7,2),
+	phone	CHAR(15)	CONSTRAINT	c_emp_phone_ch		CHECK(phone LIKE '3429-%'),
+	dept_id	NUMBER(7)	CONSTRAINT	c_emp_s_dept_id_fk	REFERENCES   s_dept( id )
+```
 ```SQL
 CREATE TABLE emp_test (
 	id			NUMBER(3) ,
@@ -158,6 +170,14 @@ SELECT USER FROM DUAL; /* USER 사용자 계정*/
 --- 
 ## DML :: TABLE COLUMN VALUE 입력
 
+구조??
+```sql
+INSERT 
+INTO table_name ( column_name [, column_name ... ] )
+	    VALUES ( record [,record ...] );
+```
+<br/>
+
 모든 COLUMN VALUE 입력 
 ```SQL
 INSERT 
@@ -178,13 +198,11 @@ INTO emp_test (id, name, salary)
 ```
 키워드를 사용해서 벨류 입력
 ```SQL 
-NSERT 
 INTO emp_test
 	VALUES (2, USER, 1000,'부사장',SYSDATE,'영업부');
 ```
 NULL 입력 :: 묵시적 입력
 ```SQL 
-NSERT 
 INSERT 
 INTO emp_test (id, name)
 	VALUES (5, '장나라');
@@ -193,9 +211,7 @@ SELECT * FROM emp_test;
 ```
 NULL 또는 사용
 ```SQL 
-NSERT 
 INSERT 
-NSERT 
 INTO emp_test
 	VALUES (6, '신나라',NULL, null, '','');
 
@@ -203,6 +219,15 @@ SELECT * FROM emp_test;
 ```
 ***
 ## DML :: TABLE RECORD 수정
+
+구조??
+```sql
+UPDATE table_name
+SET column_name = record 
+[WHERE column_name = record ] /* 어떤것을 바꿀지 */
+```
+<br/>
+
 id를 7로 수정
 ```SQL 
 UPDATE emp_test
@@ -253,6 +278,16 @@ WHERE DEPT_NAME IS NOT NULL; /*NOT도 키워드*/
 ---
 
 ## DML :: TABLE COLUMN VALUE 삭제
+>거의 사용하지 않음
+
+구조??
+```sql
+DELETE FROM table_name
+[WHERE column_name = record ] /* 어떤것을 지울지 */
+```
+
+<br/>
+
 장군 RECORD 삭제
 ```SQL
 DELETE FROM emp_test
@@ -275,6 +310,19 @@ DELETE FROM emp_test;
 ---
 ## DML :: TABLE RECORD 찾기
 > 현업에서 * (별표)를 쓰지않음
+
+
+구조??
+```sql
+SELECT
+column_name [, column_name ...]
+FROM table_name [, table_name ...]                      /*여기까진 필수*/
+[WHERE 조건]                                            /* 조건 */
+[GROUP BY column_name [, column_name] ]                /* 1:N 일때 그룹화 */
+[HAVING 조건]                                          /* 그룹화 후 추가 조건 */
+[ORDER BY column_name [,column_name ...] ASC [DESC] ]  /* 정렬 */
+```
+<br/>
 
 모든 내용을 찾기
 ```sql

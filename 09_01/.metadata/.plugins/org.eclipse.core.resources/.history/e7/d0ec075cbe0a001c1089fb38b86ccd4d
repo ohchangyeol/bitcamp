@@ -1,0 +1,9 @@
+package ex2;
+
+public class Prob2 {
+	//main method
+	public static void main(String[] args) {
+		int[] array = generateRandomNumber();
+	}
+
+}

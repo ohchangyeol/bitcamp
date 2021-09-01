@@ -1,0 +1,26 @@
+package ex2;
+
+import java.util.Random;
+
+public class Prob2 {
+	//method
+	public static int[] generateRandomNumber() {
+		int[] randomInt = new int[10];
+		for(int index : randomInt) {
+			index = (new Random(31).nextInt());
+			System.out.println(index);
+		}
+		
+		return null ;
+	}
+	public static int[] printStatistics(int [] array) {
+			
+		return null ;
+	}
+	
+	//main method
+	public static void main(String[] args) {
+		Prob2.printStatistics(Prob2.generateRandomNumber());
+	}
+
+}
