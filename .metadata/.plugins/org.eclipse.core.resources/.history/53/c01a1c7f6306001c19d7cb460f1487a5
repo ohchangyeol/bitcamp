@@ -1,0 +1,7 @@
+public class Prob{
+	public static void main(String[] args){
+		System.out.println("문자열에 특정 문자 변경하는 테스트");
+		System.out.println("----------");
+		
+	}
+}

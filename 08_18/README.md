@@ -1,10 +1,10 @@
-# 08_18 수업정리
+08_18 수업정리
+====
 
-## 수업 복습
-    this = 나  
-    super = 상위
+# Java 
 
----
+
+
 
 ## connot Resolve Symbol 
 - ~~을 찾을수 없다.
@@ -64,7 +64,7 @@
     > 공용,공개
 
 ## 제어자
-> static, final, abstract 어려움ㅅㅂ 특별한 기능있음 
+> static, final, abstract  특별한 기능있음 
 
  - static
     > class에 안붙는다. `field` `method` 에 붙음.

@@ -1,23 +1,5 @@
-# 08_25 수업정리
-
-## 목차
-
-- [08_25 수업정리](#08_25-수업정리)
-  - [목차](#목차)
-  - [용어 정리 해야할 것들](#용어-정리-해야할-것들)
-  - [ArrayList = Vector](#arraylist--vector)
-    - [개인적 궁금한것](#개인적-궁금한것)
-  - [자료구조 - Collection?](#자료구조---collection)
-  - [Interface List `<E>`](#interface-list-e)
-  - [Interface Queue `<E>`](#interface-queue-e)
-  - [Interface Map `<K,V>`](#interface-map-kv)
-  - [Interface Set `<E>`](#interface-set-e)
-  - [Autoboxing and Unboxing](#autoboxing-and-unboxing)
-  - [Exception 처리](#exception-처리)
-    - [Exception의  2가지](#exception의--2가지)
-  - [Inner class](#inner-class)
-
---- 
+08_25 수업정리
+=======
 
 ## 용어 정리 해야할 것들
 	Collection class
@@ -29,6 +11,7 @@
 	inherited 
 	핸들링 - 처리
 
+# Java 
 ## ArrayList = Vector 
 ArrayList와 Vector는 interface - List`<E>`를 받는다.  
 약간의 추가적 기능은 있지만 List의 메서드를 기본적으로 알고있다면 List 인터페이스를 받는 class는 대부분 쓸수 있다. 

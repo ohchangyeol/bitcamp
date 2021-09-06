@@ -1,0 +1,13 @@
+===========================문제 1=============================
+SELECT   TRUNC(commission_pct,1) 커미션, COUNT(employee_id) 직원수
+FROM     employees
+GROUP BY TRUNC(commission_pct,1);
+===========================문제 2=============================
+SELECT   a.부서명, a.직원명, a.급여 , A.커미션 
+FROM    (SELECT RANK() OVER (ORDER BY commission_pct DESC) RANK ,D.department_name 부서명, commission_pct 커미션 , E.first_name 직원명 , E.salary 급여
+         FROM     employees E JOIN departments D ON E.department_id = D.department_id
+         WHERE   commission_pct IS NOT NULL)A
+WHERE   RANK < 4 ;
+===========================문제 3=============================
+Prob07.java 제출
+

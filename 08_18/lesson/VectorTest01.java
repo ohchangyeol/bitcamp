@@ -8,7 +8,7 @@ public class VectorTest01 {
 
 		String s1 = new String("1.È«");
 		vector.add(s1);
-/*		vector.add(new String("2.µ¿"));
+		vector.add(new String("2.µ¿"));
 		vector.add("3.´Ô ¾È³çÇÏ¼¼¿ä");
 
 		for (int i=0; i<vector.size(); i++) {
@@ -26,7 +26,7 @@ public class VectorTest01 {
 		}
 
 		System.out.println("\n ==> API È®ÀÎ");
-		vector.insertElementAt("5.È«±æ¼ø", 3);
+		vector.setElementAt("5.È«±æ¼ø", 3);
 		for (int i=0; i<vector.size(); i++) {
 			System.out.print((String) vector.elementAt(i));
 		}
@@ -36,6 +36,6 @@ public class VectorTest01 {
 		for (int i=0; i<vector.size(); i++) {
 			System.out.print((String) vector.elementAt(i));
 		}
-		*/
+		
 	}
 }

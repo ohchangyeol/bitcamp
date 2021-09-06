@@ -1,13 +1,14 @@
 # 08_23 수업 정리
-1. 아스키코드, 인코딩, 디코딩, 다이아몬드 프라블럼
-2. abstract class 
-3. interface 
-4. ~is a~ 
-5. dependency, Association 
-6. toString()
-7. equals()
----
-## 용어 정리 해야할 것들
+
+## 수업 복습
+
+- this ,super에 대한 복습
+- instance 묵시적 형변환
+- static , abstract 간단 정리
+- 버스차지를 이용해 다형성 복습
+
+
+## 용어 정리
 	ASCII code - 아스키코드
 	인코딩
 	디코딩
@@ -20,18 +21,13 @@
 	garbage collection 
 
 ---
+
+# Java 
+
 ## Object class 
 - `java의 최상위 class`다. (API의 최상위 클래스)
 
----
-## 수업 복습
 
-- this ,super에 대한 복습
-- instance 묵시적 형변환
-- static , abstract 간단 정리
-- 버스차지를 이용해 다형성 복습
-
----
 
 ## abstract class - 추상 클래스
 

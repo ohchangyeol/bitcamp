@@ -1,0 +1,37 @@
+package lesson;
+
+import java.sql.*;
+
+public class CreateJDBC {
+	
+	//main
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement stmt = null;
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		
+		try {
+			Class.forName("oarcle.jdbc.driver.OarcleDriver");
+			System.out.println("1. driver loaing OK");
+		} catch (ClassNotFoundException e) {
+			System.out.println("\n==> Driver Loading시  Exception 발생 \n");
+			e.printStackTrace();
+		}
+		
+		try {
+			con = DriverManager.getConnection(url,"scott","tiger");
+			System.out.println("2. Connection 인스턴스 생성 완료");
+		} catch (SQLException e) {
+			System.out.println("\n==> JDBC 절차 중 exceprion 발생 : "+ e.getErrorCode());;
+			e.printStackTrace();
+		}
+		
+		String createSql =
+				"CREATE TAVLE firstJDBC"+
+						"(no		NUMBER(3),"+
+						"name"+
+						"email"+
+						"address)";
+	}
+
+}

@@ -9,7 +9,7 @@
     delete - 거의 사용하지 않음
     dbms 플랫폼에 종속적인 개발을 하면 불편한 일이 많아진다.
 
-# SQL - 2
+# SQL :: part 2
 
 ## 조건에 다양하게 쓰는 keyword 
 - AND

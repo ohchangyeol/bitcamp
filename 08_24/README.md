@@ -1,15 +1,18 @@
-# 08_24 수업 정리
+08_24 수업 정리
+===
 
-1. call By Reference 
-2. Call by value 
-3. Garbage 
-4. 문자열 병합 
-5. 래퍼클래스 
-6. API(String Vector )
-7. Enhanced For Loop 
-8. generic
+## 용어 정리 할것들
+- parsing (파싱)?????
+- 레퍼런스 카운터 
+- Concrete Methods 
+- 상수는 카멜케이스를 따르지않는다. **추가**
+- Deprecated. api에서 쓰지말고 다른것을 쓰기바람
+- 객체 -물리적인,개념적인,소프트적인
+- 래퍼클래스(Wrapper Class)
+- <> 제네릭 `<E>` 엘리먼트의 약자
+
 ---
-<br/>
+# java 
 
 ## Consturctor에 대해서...
 > 생성자를 만들지않으면 자동으로 만들어지지만 개발자가 생상자를 하나라도 오버로딩을 하면 자동으로 생성되지않는다.
@@ -18,18 +21,7 @@
 
 
 
-## 용어 정리 할것들
 
-- parsing (파싱)?????
-- 레퍼런스 카운터 = 식별성의 개수
-- Concrete Methods - api에서 Concrete Methods란 ? 추상화(abstract 나 interface)된 메서드를 오버라이딩 한것.
-- 상수는 카멜케이스를 따르지않는다. **추가**
-- Deprecated. api에서 쓰지말고 다른것을 쓰기바람
-- 객체 -물리적인,개념적인,소프트적인
-- 래퍼클래스(Wrapper Class)
-- <> 제네릭 `<E>` 엘리먼트의 약자
-
----
 
 ## Call By Reference
 > 레퍼런스의 참조 값을 지정한다.

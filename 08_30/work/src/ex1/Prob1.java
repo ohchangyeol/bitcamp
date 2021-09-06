@@ -7,7 +7,6 @@ public class Prob1 {
 		byte[] temp = str.getBytes();
 		for (int i =0; i< temp.length ; i++) {
 			if (temp[i] < 0 ) {
-//				System.out.println(Integer.toHexString(temp[i]).substring(6).toUpperCase());
 				result += "%" + Integer.toHexString(temp[i]).substring(6).toUpperCase();
 			}else {
 				result += Character.toString((char)temp[i]);

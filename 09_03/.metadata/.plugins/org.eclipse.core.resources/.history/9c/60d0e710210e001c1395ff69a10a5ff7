@@ -1,0 +1,31 @@
+package work;
+
+public class EmpStatistics {
+
+	//static constructor
+	static{
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	// emthod
+	public void printStatistics(int maxSalary) {
+		System.out.println("===============================");
+		System.out.println("Max Salary : " + maxSalary);
+		System.out.println("===============================");
+
+
+	}
+	
+	//main
+	public static void main(String[] args) {
+		 int maxSalary = 10000;
+		 new EmpStatistics().printStatistics(maxSalary);
+		 
+		 maxSalary = 15000;
+		 new EmpStatistics().printStatistics(maxSalary);
+	}
+
+}

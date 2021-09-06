@@ -36,7 +36,7 @@ public class VectorTest02 extends Vector {
 		vectorTest.pringString(vectorTest);
 		
 		System.out.println("\n ==> API 확인");
-		vectorTest.insertElementAt("5.홍길순", 3);
+		vectorTest.setElementAt("5.홍길순", 3);
 		vectorTest.pringString(vectorTest);
 
 		System.out.println("\n ==> API 확인");

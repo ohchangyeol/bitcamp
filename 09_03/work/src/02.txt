@@ -1,0 +1,12 @@
+===========================문제 1=============================
+SELECT   A.employee_id , A.first_name,A.last_name, nvl( b.department_name, '<NOT-ASSIGNED>')
+FROM     employees A ,departments b
+WHERE    to_char(hire_date,'yyyy') IN ('1999')
+         AND A.department_id = b.department_id(+);
+===========================문제 2=============================
+SELECT  A.*
+FROM    employees A, departments b
+WHERE   A.department_id = b.department_id
+        AND b.department_name = 'Marketing';
+===========================문제 3=============================
+EmpStatistics.java 파일 제출

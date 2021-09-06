@@ -1,6 +1,9 @@
-# 08_11 수업정리
+08_11 수업정리
+===
 
-### Data Type 
+# Java 
+
+## Data Type 
 >  `byte`(1byte), `short`(2byte), `int`(4byte), `long`(8byte), `float`(4byte), `double`(8byte), `char`(2byte) , `boolean`(1byte)
 
 - 기본형데이터 타입 
@@ -27,7 +30,7 @@
   - 인터페이스 - `interface`
 
 
-### Casting - 형변환
+## Casting - 형변환
 	
 - 묵시적 형변환
 

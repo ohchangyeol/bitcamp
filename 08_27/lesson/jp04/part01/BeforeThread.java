@@ -1,4 +1,4 @@
-package jp04.part01;
+//package jp04.part01;
 
 /*
 *	FileName : BeforeThread.java

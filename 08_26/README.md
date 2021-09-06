@@ -1,32 +1,12 @@
 # 08_26 수업정리
 
-## 목차
-  - [JAVA_HOME을 왜 환경변수로 지정 해야 하는가?](#java_home을-왜-환경변수로-지정-해야-하는가)
-  - [class path](#class-path)
-  - [Java Method Signature](#java-method-signature)
-  - [eclipse](#eclipse)
-  - [implements](#implements)
-  - [API](#api)
-    - [java.lang](#javalang)
-    - [java.util](#javautil)
-    - [java.io](#javaio)
-      - [InputStream](#inputstream)
-      - [outStream](#outstream)
-      - [reader](#reader)
-      - [writer](#writer)
-      - [InputStreamReader](#inputstreamreader)
-      - [OutputStreamWriter](#outputstreamwriter)
-  - [process](#process)
-  - [System](#system)
-
----
-
-## 용어 정리 해야할 것들...
+## 용어 정리
 
 	IDE - 통합 개발 환경
 	프로세스
   	유니코드
 
+# Java 
 
 ## JAVA_HOME을 왜 환경변수로 지정 해야 하는가?
 이클립스는 2021년에 많은 것들이 바뀌었다. 2021년 이전에는 환경변수에 지정된 자바홈으로 이클립스가 구동이 되었다면, 현재 이클립스에서는 **플러그인으로 자바를 지원** 해주기 때문에 자바홈 환경 변수를 잡을 일이 줄어들었다.  

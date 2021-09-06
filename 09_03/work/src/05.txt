@@ -1,0 +1,14 @@
+===========================문제 1=============================
+SELECT   D.department_name NAME ,MIN(E.salary) minsal,MAX(E.salary) maxsal,AVG(E.salary) avgsal
+FROM     employees E , departments D 
+WHERE    E.department_id = D.department_id 
+GROUP BY D.department_name ;
+===========================문제 2=============================
+SELECT   A.employee_id, A.department_id, A.salary ,b.avg_salary
+FROM     employees A, (SELECT   department_id ,  round(AVG(salary)) avg_salary
+                       FROM     employees
+                       GROUP BY department_id) b
+WHERE    A.department_id = b.department_id
+         AND b.avg_salary < A.salary;
+===========================문제 3=============================
+Prob5.java 파일 제출

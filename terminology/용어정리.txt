@@ -1,0 +1,185 @@
+System ( 시스템 ) = 정보를 처리하는데 사용되는 프로그램등, 절차 데이터 및 기기들의 다양한 집합체
+
+Modeling ( 모델링 ) = 모형 제작 => 기획
+                            시스템 구축시 구현전 결정하는 모든 활동.
+                            (요구사항 정의, 분석 , 설계 )
+
+Rotation ( 로테이션 ) = 연산자??
+
+UML = Unified Modeling Language( 유니파인드 모델링 렝귀지 ) 로 표준화된 범용 모델링 언어.
+
+CSV = ( comma separated values 콤마 세퍼레이터드 밸류 ) =>구분선  
+
+CSV = ,로 분류되는 컴퓨터 용어
+
+Platform ( 플랫폼 ) => 틀..? => 상대적 개념.
+
+compile = java 파일을 class 파일로 변환 시켜주는것.
+
+variable (베리어블) - 변수
+
+OOP(객체지향언어)는 분석, 설계, 구현에 중요한 부분이다
+
+Identifier (아이덴티파이어) = (식별자) 이름 - numbering을 하지않는다.
+
+JRE = Java SE Runtime Environment  => 자바를 돌아가는 환경.
+	java API와 VM(버츄얼 머신)  을 합친것
+
+JDK = Java Development Kit => 개발하기 위해 사용하는 도구.
+
+JVM = Java Virtual Machine - 자바 버추얼 머신
+
+src = source(소스)
+
+Runtime error ( 런타임 에러 ) = 컴파일때는 문제가 없으나 , run 했을 때 에러 발생
+
+API - Application programming Interface ( 어플리케이션 프로그래밍 인터페이스 ) = 응용 프로그램에서 사용할수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할수 있게 만든 인터페이스 
+
+literal (리터럴) = 그 자체로 값을 의미하는 것
+
+keyword = 예약어 - boolean... class, for, if 이런거
+
+casting = 형변환   ========>>***08_11_수업정리***
+
+Domain - 영역
+
+operator(오퍼레이터) = . , new 같은 것
+
+debug = 내가 짠 알고리즘의 오류를 잡는 것
+
+Readability(리더빌리티) - 들여쓰기
+
+return = 돌려받다 or 돌아가다. 돌려받을시엔 무조건 value값만 돌려 받을수 있다.
+
+refactoring(리팩토링) - 소스를 보안하는 행위.
+
+initialize (이니셜라이즈) - 초기화
+
+field - 지역변수? - 상태,속성의 정보.
+
+클래스 변수,메서드 - static이 붙은 변수,메서드는 이미 적재 되어있어 인스턴스로 만들지 않아도 class이름으로 불러도 되는 애들.
+
+인스턴스 변수 - 참조 변수
+
+지역변수 - method 안에서 노는 변수
+
+bean - real world 를 표현한것.main이 없다. = object modeling
+
+object modeling= real world 를 class화 =bean
+
+method = 행위 - 함수
+
+Hard coding(하드코딩) = 조건에 값을 대입하는것
+
+조건에 변수를 대입하는것을 ~~~~ *이것을 더 선호함*
+
+Camel Case(카멜 케이스) = 자바의 Identity Fire(아이덴티파이어)
+
+Sorting(소팅) = 분류
+
+extends - 확장, 공유, 상속
+
+Information Hiking(인포메이션 하이딩)  - 캡슐화?
+
+attribute (어트리뷰트) = 명사 - 데이터타입과 변수 선언  --static modeling
+
+행동 - 동사 - method ----------dynamic modeling
+
+bean - object modeling한 class
+
+new - 새로운 메모리 할당.
+
+instance 생성 - 하드디스크에 있는 class를 메모리에 할당 하는것.
+
+Method Syntax = 메서드 명령어
+
+message =객체와 객체가 커뮤니케이션 하기 위해 생긴 것. 인자.
+
+getter method = 정보를 받는 get~~~~의 메서드.(사용자끼리 정의) 캡슐화 때문에 ?
+
+overloading = 하나의 공통 된 Behavior(비헤이버 - 행동)를 다른 인자값 또는 개수를 주어 다른 결과값을 출력 하는 것. 
+
+public = 공개.
+
+private = 비공개.
+
+벨리네이크? = 유효성 검사.
+
+인수 = method 의 ()안의 보내는쪽 - 호출할 때 쓰면 인수
+
+paramiter(매개변수) = method 의 ()안의 받는쪽 - 만들때 넣는것이 매개변수
+
+constructor ( 컨스터럭스 )=  생성자 - 상태값 초기화 => 객체는 서로 다른 상태를 갖는다 - Initializr 하는 method , overloading 이랑 연관성이 높음 
+	
+인스턴스 변수  = 참조변수. class를 참조한 instance 를 담는 변수 
+
+extends = 확장( 상속 개념)
+ 
+
+super() this() = 메서드 keyword
+		 아무것도 없을 때 super()값이 default
+
+	this() = 자신의 생성자 명시적으로 호출
+		 자기 자신을 호출할 순 없다, constructor이 recursive 때문에 무한으로 돌아감.
+
+	super() = 상위의 생성자 명시적 호출 
+		  아무것도 없을 때 super()값이 default / 상속이 안되있을 경우 error 
+
+super , this = 레퍼런스(매개변수, 메서드) keyword
+	this 특 => this의 class 안에 없으면 상속 되있는 곳까지 찾아가서 찾아본다.
+
+overriding = 상위의 메서드를 하위의 메서드로 동일하게 만드는 행위 -올라타다.
+
+commandLine argument = 명령행 매개변수 - java pp~~~ 121 12 1이런거
+
+signature(시그니처) = 선언 부분
+
+Polymerism(폴리머피즘) = 하나의 인터페이스에 다양하게 쓰이는것.
+
+readability(리더빌리티) = 가독성
+
+win - 폴더(\) , 리눅스 - 디렉토리(/), java - package(.)
+
+Instance Methods = class
+
+오픈소스 = 남이 만든 소스를 웹에 오픈했을 때를 말하는것.
+
+**접근 제어자**
+
+Private - 개인의, 비공개  같은 클래스 안에서만 사용 가능.
+
+protected =일부공개      같은 클래스, 같은패키지,상속된 자손까지 접근가능.
+
+default(지정하지않을 때) - 같은 클래스, 같은 패키지 안에서
+
+public - 공용,공개
+
+recursive = 무한으로
+
+access Modifirer = 접근제어자 - public, private, protected, (default) - 캡슐화필요성.
+
+Modifirer = 제어자 - static final 
+
+static - 어디서든 쓸수있는 친구 - Fileld , Method 가능 , 같은 클래스안에서 class를 호출하지않고 부를수 있다. * static은 class로 접근하자 * (class.asaa) *
+
+	static int abc - 변수는 어디서나 사용할수 있는 변수가 된고 상태값을 변경하면 class변수를 쓰고있는 모든 class 들의 값이 변경된다.
+	static method = 인스턴스 없이 호출이 가능하고 다른 값을 리턴받는 abs 같은 느낌??? static method는 그 class안에 있는 field 변수를 사용할 수 없다.
+
+final = 마지막 - 수정불가ㅋ. - class, Field, method 가능
+
+	final class - 상속이 불가능하다. 자식을 만들수 없다(다른클래스의 조상이 될수 없다.)
+	final field - 값을 변경할 수 없는 상수가 됨.
+	final Method - 오버라이딩이 불가능하다.  
+
+abstract - 구상 추상, 형태만 잡아놓는 것 
+	   ex) abstract charge(); abstract class className 
+
+*상속 관계의 형변환*
+
+	묵시적 형변환시 - 자손클래스에 있는 추가된 기능은 사용할 수 없다. 하지만 overriding 된것은 자신의 기능에 upgrade했기 때문에 사용이 가능하다.
+	
+	명시적 형변환 - 자손클래스의 추가된 기능을 다시 사용하게 하기 위해 명시적()으로 사용해 다시 사용할 수 있다.
+
+분산 환경 - 여러 os 가 모인 환경.
+
+바이트코드 - complie 된 파일 class

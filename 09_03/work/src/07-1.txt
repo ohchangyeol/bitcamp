@@ -1,0 +1,31 @@
+===========================문제 1=============================
+SELECT   to_char(hire_date,'mm') 월 , COUNT(employee_id)직원수
+FROM     employees 
+GROUP BY to_char(hire_date,'mm')
+ORDER BY 1;
+===========================문제 2=============================
+SELECT  D.department_name, E.first_name, E.salary
+FROM    employees E, departments D
+WHERE   (E.department_id,salary) IN ( SELECT   department_id , MAX(salary)
+                                    FROM     employees
+                                    GROUP BY department_id)
+        AND E.department_id = D.department_id;
+===========================문제 3=============================
+SELECT   D.department_name 부서명, MAX(E.salary) 최대급여, MIN(E.salary) 최소급여, AVG(E.salary) 평균급여
+FROM     departments D, employees E
+WHERE    E.department_id = D.department_id
+GROUP BY D.department_name
+HAVING   AVG(E.salary)>(SELECT  AVG(E.salary)
+                        FROM    employees E
+                        WHERE   E.department_id = 60) 
+         AND AVG(E.salary)<( SELECT  AVG(E.salary)
+                             FROM    employees E
+                             WHERE   E.department_id = 80);
+===========================문제 4=============================
+SELECT   nvl(D.department_name, '<신생부서>') 부서명, COUNT(E.employee_id) 직원수
+FROM     departments D, employees E
+WHERE    D.department_id(+) = E.department_id
+GROUP BY D.department_name
+HAVING   COUNT(E.employee_id) = 1
+ORDER BY D.department_name;
+

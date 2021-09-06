@@ -1,0 +1,21 @@
+package lesson;
+
+import java.util.*;
+
+public class ConnectionTest02 {
+	//main
+	public static void main(String[] args) {
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		String user ="scott";
+		String pwd = "tiger";
+		
+		OracleDriver od = new OracleDriver();
+		
+		Properties info = new Properties();
+		info.put("user", user);
+		info.put("password", pwd);
+		
+		Con
+	}
+
+}

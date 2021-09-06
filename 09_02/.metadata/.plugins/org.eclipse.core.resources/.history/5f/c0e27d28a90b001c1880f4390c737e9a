@@ -1,0 +1,55 @@
+package lesson;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Properties;
+
+public class PreparedStmtTest {
+	public static void main(String[] args) {
+		if(args.length != 3 ) {
+			System.out.println("실행방법 java Example02 [no값][id값][pwd값]");
+			System.exit(0);
+		}
+		
+		int no = Integer.parseInt(args[0]);
+		String id =args[1];
+		String pwd = args[2];
+		
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		
+		// 1단계 : Connection
+		Class.forName("oarcle.jdbc.driver.OarcleDriver");
+		Connection con = DriverManager.getConnection(url,"scott","tiger");
+		
+		///////////////////////////////////////////////////////////////////
+		//Statement / ProparedState 비교이해
+		//===============Statement 사용===================//
+//		Statement stmt= con.createStatement();
+//		String createSql = "insert into member values ("+no+","+id+","+pwd+")";
+//		int confirm = stmt.executeUpdate(createSql);
+		
+		//===============PreparedStatement 사용===================//
+		
+		ResultSet rs = stmt.executeQuery("SELECT * FROM product");
+		
+		rs.next();
+		
+		String productName = rs.getString("p_name");
+//		String productName = rs.getString(1);
+		int productPrice = rs.getInt("p_price");
+//		int productPrice = rs.getInt(2);
+		
+		System.out.println("상품명 : "+productName);
+		System.out.println("가 격 : "+productPrice);
+		
+		//각각의 객체를 close 한다
+		rs.close();
+		stmt.close();
+		con.close();
+		
+		
+		
+	}
+}

@@ -1,0 +1,17 @@
+===========================문제 1=============================
+SELECT   A.job_title , SUM(b.salary)
+FROM     jobs A , employees b 
+WHERE    A.job_id = b.job_id
+GROUP BY A.job_title
+HAVING   SUM(b.salary)> 30000
+ORDER BY SUM(b.salary) DESC;
+===========================문제 2=============================
+SELECT  E.employee_id , E.first_name, j.job_title, P.department_name
+FROM    employees E, jobs j, departments P 
+WHERE   E.job_id = j.job_id
+        AND E.department_id = P.department_id
+        AND P.location_id IN (SELECT    locations.location_id
+                                FROM    locations
+                               WHERE    city = 'Seattle');
+===========================문제 3=============================
+EmpManager.java 파일 제출
