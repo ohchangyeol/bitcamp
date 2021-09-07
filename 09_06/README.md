@@ -42,11 +42,13 @@ server - web server
 웹 서버에서 url의 경로를 찾아가 정보를 브라우저에 전송함
 
 **browser** 
-- url을 web c/s 로 전송을 하는 app
+- http프로토콜을 이용해 url을 web c/s 로 전송을 하는 app
 - html을 parsing 하고 화면에 출력하는app
 
 **web server**
 - url을 c/s로 내보내고 resource 관리하는 server app
+
+<img src = "./client_server.png">
 
 ## c/s 프로그램의 3개의 조건
 
