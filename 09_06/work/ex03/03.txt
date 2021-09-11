@@ -1,0 +1,22 @@
+===========================문제 1=============================
+SELECT  A.last_name , A.salary
+FROM    employees A , employees M
+WHERE   M.employee_id = A.manager_id 
+        AND A.salary > M.salary;
+===========================문제 4=============================
+Join------------
+SELECT  A.first_name, A.last_name, salary
+FROM    employees A, jobs b
+WHERE   A.job_id = b.job_id
+        AND b.job_title = 'Sales Representative'
+        AND A.salary BETWEEN 9000 AND 10000 ;
+
+SubQurey----------
+SELECT  first_name, last_name, salary
+FROM    employees
+WHERE   job_id = (SELECT job_id 
+                  FROM   jobs 
+                  WHERE  job_title = 'Sales Representative')
+        AND salary BETWEEN 9000 AND 10000 ;
+===========================문제 3=============================
+EmpManager.java 파일 제출

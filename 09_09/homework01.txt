@@ -1,0 +1,16 @@
+- 회원가입
+  1.  Business Logic Layer
+       ㅇ UserVO.java 
+       ㅇ UserDAO 
+             public void addUser(UserVO userVO) Method 구현
+       ㅇ OracleConnectionPool or dataSource 데소 추천ㅎㅎ
+  2. Presentation Layer
+       ㅇ AddUser.java (Servlet/Servlet mapping 하기..)
+       ㅇ addUser.html
+
+vo , dao , connection pool
+
+데이터에 관련해서 힘들어 하지마라. 데이터 타입 신경 쓰지말고 varaher2 
+
+
+homework01.war로 압축 후 homework01_오창열.war로 제출

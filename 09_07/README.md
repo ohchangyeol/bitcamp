@@ -28,7 +28,8 @@ Client와 Server간에 두가지 메세지(HTTP요청 , HTTP응답)를 주고받
   default 방식 . **URI가 다 나온다.**
 - POST  
   가시적 보안을 요구할 때 사용. **URI에 나오지 않는다.**
-# Servlet & JSP 
+
+# Servlet - part 2
 
 ## Servlet의 약속
 servlet container는 개발자가 생성한 메서드가 뭔지 모르기 때문에 container와의 문법이 있다.

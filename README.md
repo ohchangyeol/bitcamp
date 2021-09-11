@@ -142,10 +142,22 @@
     URI &  URL  
     jar 와 war  
     Client & Server  
-    Servlet & JSP  
+    **Servlet - part 1**  
     WAS  
 
 - ## 09_07 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/09_07)
     HTTP Protocol
     GET , POST
-    **Servlet & JSP**
+    **Servlet - part 2**
+
+- ## 09_08 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/09_08)
+    Servlet - part 3  
+    eclipse 연결  
+    Form action과 mapping  
+    **enumeration`<E>`**
+
+- ## 09_09 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/09_09)
+    **Servlet - part 4**  
+    servlet의 모듈화  
+    servletConfig  
+    Connection pool

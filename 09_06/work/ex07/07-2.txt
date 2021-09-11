@@ -1,0 +1,38 @@
+===========================문제 1=============================
+SELECT   D.department_name 부서명, to_char(E.hire_date,'MM') 입사월, COUNT(E.employee_id) 직원수
+FROM     departments D, employees E
+WHERE    D.department_id = E.department_id
+GROUP BY D.department_name,to_char(E.hire_date,'MM')
+HAVING   COUNT(E.employee_id) >= 5 
+ORDER BY 1;
+===========================문제 2=============================
+SELECT   nvl(C.country_name,'<부서없음>') 국가명, nvl(L.city ,'<부서없음>') 도시명, COUNT(E.employee_id) 
+FROM     employees E LEFT JOIN departments D ON E.department_id = D.department_id
+                     LEFT JOIN locations L ON D.location_id = L.location_id
+                     LEFT JOIN countries C ON L.country_id = C.country_id 
+GROUP BY C.country_name, L.city
+ORDER BY C.country_name;
+===========================문제 3=============================
+SELECT  e.employee_id 직원아이디, e.first_name 이름, e.salary 급여, VT.avg
+FROM    employees e , ( select   e.department_id, round(avg(e.salary),2)avg ,max(e.salary) max
+                        from     employees e, departments d 
+                        where    e.department_id = d.department_id 
+                        group by e.department_id) VT
+where   e.department_ID = vt.department_ID
+        and e.salary = VT.max ;
+===========================문제 4=============================
+CREATE TABLE salgrade
+(grade  NUMBER(2)   PRIMARY KEY, 
+ losal  NUMBER(5)   NOT NULL,
+ hisal  NUMBER(5)   NOT NULL);
+
+INSERT INTO salgrade VALUES(1, 1000, 5000);
+INSERT INTO salgrade VALUES(2, 5001, 10000);
+INSERT INTO salgrade VALUES(3, 10001, 20000);
+INSERT INTO salgrade VALUES(4, 20001, 30000);
+
+SELECT   S.grade||'등급' 급여등급 , COUNT(E.department_id) 직원수
+FROM     employees E, salgrade S 
+WHERE    E.salary BETWEEN S.losal AND S.hisal
+GROUP BY S.grade
+ORDER BY 1;

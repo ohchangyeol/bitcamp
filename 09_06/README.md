@@ -58,11 +58,11 @@ server - web server
 
 <br/>
 
-# Servlet & JSP 
+# Servlet - part 1
 servlet과 jsp 는 **bean**이라 실행이 되지 않는다.  
 그래서 java에서  **servlet container** 와 **JSP container**를 지원해줌    
     
-## 그래서 Servlet , JSP 이 뭔데?????
+## 그래서 Servlet 이 뭔데?????
 **J2SE IOPackage로 browser에게 HTML을 보내는 기술**  
 
 ## URL Hiding
