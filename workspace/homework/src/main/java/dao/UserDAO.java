@@ -58,38 +58,43 @@ public class UserDAO {
 		InitialContext ic = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs= null ;
-		UserVO vo = new UserVO();
-		try{
-			ic = new InitialContext();
-			DataSource ds = (DataSource)ic.lookup("java:comp/env/jdbc/ora");
-			String query = "select * from work where name = ? ";
-			
-			
-			con = ds.getConnection();
-			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, name);
-						
-			rs = pstmt.executeQuery();
-			
-			rs.next();
-//			System.out.println(rs.getString("name"));
-			vo.setName(rs.getString("name"));
-			vo.setSex(rs.getString("sex"));
-			vo.setYear(rs.getString("year"));
-			vo.setMonth(rs.getString("month"));
-			vo.setDay(rs.getString("day"));
-			vo.setEducation(rs.getString("education"));
-			vo.setJob(rs.getString("job"));
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			if(con != null) try {con.close();}catch (SQLException e1) {}
-			if(pstmt != null) try {pstmt.close();}catch (SQLException e2) {}
-			if(rs != null) try {rs.close();}catch (SQLException e3) {}
-		}
-		return vo;
 		
-	}
+		UserVO vo = new UserVO();
+		
+		if(!(name.equals("") || name== null)){
+			try{
+				ic = new InitialContext();
+				DataSource ds = (DataSource)ic.lookup("java:comp/env/jdbc/ora");
+				String query = "select * from work where name = ? ";
+				
+				con = ds.getConnection();
+				pstmt = con.prepareStatement(query);
+				pstmt.setString(1, name);
+							
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					System.out.println(rs.getString("name"));
+					vo.setName(rs.getString("name"));
+					vo.setSex(rs.getString("sex"));
+					vo.setYear(rs.getString("year"));
+					vo.setMonth(rs.getString("month"));
+					vo.setDay(rs.getString("day"));
+					vo.setEducation(rs.getString("education"));
+					vo.setJob(rs.getString("job"));
+				}else {
+					return null;
+				}
+				
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(con != null) try {con.close();}catch (SQLException e1) {}
+				if(pstmt != null) try {pstmt.close();}catch (SQLException e2) {}
+				if(rs != null) try {rs.close();}catch (SQLException e3) {}
+			}
+			return vo;
+		}
+		return null;
+	}//end of findUser
 
-}
+}// end of userDAO
