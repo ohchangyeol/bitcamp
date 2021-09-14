@@ -1,0 +1,17 @@
+- 회원가입 / 내정보보기  ==> html를 JSP로 바꾸기 / 내정보 수정구현
+  1.  Business Logic Layer
+       ㅇ UserVO.java 
+       ㅇ UserDAO 
+             public void addUser(UserVO userVO) Method 구현
+             public UserVO findUser(String name) Method 구현
+             public void updateUser(UserVO userVO) Method 구현
+
+       ㅇ OracleConnectionPool 
+  2. Presentation Layer
+       ㅇ addUser.jsp 
+       ㅇ findUser.jsp
+       ㅇ addUser.html  ==> addUserView.jsp 로 변경
+       ㅇ findUser.html  ==> findUserView.jsp 로 변경
+   
+       ㅇ updateUserView.jsp 구현
+       ㅇ updateUser.jsp          구현

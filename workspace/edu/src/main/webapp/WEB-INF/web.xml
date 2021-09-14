@@ -304,6 +304,7 @@
 		<res-auth>Container</res-auth>
 	</resource-ref>
 	
+	<!-- 선언적 예외처리 
 	<error-page>
 		<error-code>405</error-code>
 		<location>/jw05/405ErrorDisplay.html</location>
@@ -313,4 +314,5 @@
 		<exception-type>java.lang.NullPointerException</exception-type>
 		<location>/NullErrorDisplay</location>
 	</error-page>
+	 -->
 </web-app>

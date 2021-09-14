@@ -141,6 +141,9 @@
       <Context docBase="homework" path="/homework" reloadable="true" source="org.eclipse.jst.jee.server:homework">
      	<Resource driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="100" maxIdle="10" maxWait="5000" name="jdbc/ora" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott" validationQuery="select * from tab"/>
       </Context>
+      <Context docBase="homework03" path="/homework03" reloadable="true" source="org.eclipse.jst.jee.server:homework03">
+      	<Resource driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="100" maxIdle="10" maxWait="5000" name="jdbc/ora" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott" validationQuery="select * from tab"/>
+      </Context>      
       </Host>
     </Engine>
   </Service>

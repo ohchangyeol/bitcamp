@@ -1,3 +1,4 @@
+<%@page import="org.apache.catalina.filters.ExpiresFilter.XServletOutputStream"%>
 <%@page import="dao.UserDAO"%>
 <%@page import="vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
@@ -9,6 +10,8 @@
 	UserDAO dao = new UserDAO();
 	
 	//UserVO - Setting
+	vo.setId(request.getParameter("id"));
+	vo.setPassword(request.getParameter("password"));
 	vo.setName(request.getParameter("name"));
 	vo.setSex(request.getParameter("sex"));
 	vo.setYear(request.getParameter("year"));
@@ -17,6 +20,7 @@
 	vo.setEducation(request.getParameter("education"));
 	vo.setJob(request.getParameter("job"));
 	
+	System.out.println(request.getParameter("password"));
 	
 	//UserDAO - Insert
 	dao.addUser(vo);
@@ -33,9 +37,10 @@
 		<%if(vo.isActive()) {%>
 			<div><h2><%= request.getParameter("name") %>님, 회원 가입을 축하두립니둥둥둥둥~😊😊</h2></div>
 			<div>
-				<button type="button" onclick="location.href='../find/findUser.html'">❗❗찾기</button>
-				<button type="button" onclick="location.href='../find/findUser.jsp'">내정보👀</button>
+				<button type="button" onclick="location.href='../view/findUserView.jsp'">❗❗찾기</button>
+				<button type="button" onclick="location.href='findUser.jsp'">내정보👀</button>
 			</div>
+			<%vo.setActive(false); %>
 			<%
 				session.setAttribute( "name", request.getParameter("name") );
 				session.setAttribute("userVO", vo);
