@@ -37,6 +37,7 @@
 			<p>최종학력 : <%=vo.getEducation()%></p>
 			<p>직업 : <%=vo.getJob()%></p>
 			<button type="button" onclick="location.href='../view/updateUserView.jsp'">정보 수정💦</button>
+			<button type="button" onclick="location.href='../view/updateUserView.jsp?id=<%=vo.getId() %>>'">id로 수정💦</button>
 		</div>
 		<%session.setAttribute("userVO", vo); %>
 	<%}else{%>

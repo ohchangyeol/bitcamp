@@ -170,7 +170,13 @@
     JSP    
                                                                                    
 - ## 09_14 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/09_14)
-    **MVC**  
+    **MVC - part 1**  
+    **Object Scope**  
+    JSP ++추가  
+    CRUD   
+
+- ## 09_15 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/09_15)
+    **MVC - part 2**  
     **Object Scope**  
     JSP ++추가  
     CRUD   

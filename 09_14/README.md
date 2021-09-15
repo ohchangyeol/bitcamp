@@ -1,7 +1,7 @@
-09_13 수업정리
+09_14 수업정리
 ====
 
-# MVC
+# MVC - part 1
 > Model , View , Controller
 
 ## 배경
@@ -20,7 +20,8 @@ jsp에서 화면을 구성시 java가 섞여있다. 하지만 jsp는 화면을 �
 1. **Business logic**에 연결 => 메서드 호출
 2. **Model과 View**의 연결 => Object Scope
 3. **Navigation** => Forword / sendredirect 
-4. **work frow control** => 경로 이탈 방지, 다른경로로 접근시 불가능(**방어적 코딩**)
+4. **공통 / 선처리** => Work Flow Controll 경로 이탈 방지, 다른경로로 접근시 불가능(**방어적   코딩**)   
+   한글처리
 
 # Object Scope
 > 속성을 공유할 수 있는 유효범위에서 데이터를 공유하여 사용할 수 있는 내장 객체들을 영역객체라고 한다.
@@ -35,7 +36,7 @@ jsp에서 화면을 구성시 java가 섞여있다. 하지만 jsp는 화면을 �
 
 ## 영역별 공간
 1. application Object Scope   
-   > server의 저장공간 (공유)
+   > ~~server의 저장공간 (공유)~~ ServletContext!
     
     server를 내리기 전까지 유효, 모든 Client가 사용 가능 **(동기화 문제 발생)**  
     **server를 내리면 날아감**

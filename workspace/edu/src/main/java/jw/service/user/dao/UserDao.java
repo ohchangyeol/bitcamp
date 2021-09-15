@@ -3,6 +3,8 @@ package jw.service.user.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
@@ -76,5 +78,38 @@ public class UserDao extends AbstractDao{
 		}
 		return insertResult; 
 	}//end of addUser()
-
+	
+	public List<UserVO> getUserList() {
+		ArrayList<UserVO> arrayList = new ArrayList<UserVO>(); 
+		Connection con = null;
+		PreparedStatement pStmt= null;
+		ResultSet rs = null;
+		
+		try {
+			con = this.connect();
+			
+			pStmt = con.prepareStatement("SELECT no, id, pwd FROM users ORDER BY no ");
+			
+			rs = pStmt.executeQuery();
+			
+			while(rs.next()) {
+				UserVO vo = new UserVO();
+				vo.setNo(rs.getInt("no"));
+				vo.setPwd(rs.getString("pwd"));
+				vo.setId(rs.getString("id"));
+				
+				System.out.println(vo);
+				
+				arrayList.add(vo);
+			}
+			
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			this.close(con,pStmt,rs);
+		}
+		
+		return arrayList;
+	}
 }// end of class
