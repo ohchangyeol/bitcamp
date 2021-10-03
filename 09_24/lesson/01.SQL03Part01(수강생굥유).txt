@@ -1,0 +1,129 @@
+================================
+== ROWNUM  Test 위한 table 구성
+================================
+
+DROP TABLE emp_test;
+
+CREATE TABLE emp_test (
+	 id				NUMBER(3),
+	name			VARCHAR2(15),
+	salary			NUMBER(7,2),
+	title				VARCHAR2(15)	DEFAULT	'사원',
+	in_date			DATE DEFAULT	SYSDATE,
+	dept_name		VARCHAR2(15)
+);
+
+INSERT 
+INTO emp_test
+VALUES(111, '김유신111', 1111, '대리11', '01-01-01', '영업부');
+
+INSERT INTO emp_test
+VALUES(222, '김유신222', 2, '대리22', '2002-02-02', '영업부');
+
+INSERT INTO emp_test
+VALUES(333,  '333김유신', 3333, '33대리', '03-03-03', '영업부');
+
+INSERT INTO emp_test
+VALUES(444,  '444김유신', 4, '44대리', '04-04-04', '영업부');
+
+INSERT 
+INTO emp_test
+VALUES(555, '이순신555', 5555, '부장', '05-05-05', '관리부');
+
+INSERT 
+INTO emp_test
+VALUES(666, '이순신666', 6, NULL, '2006-06-06', '관리부');
+
+INSERT
+INTO emp_test
+VALUES(777, '주몽777', 7777, NULL, '07-07-07', '기획부');
+
+INSERT 
+INTO emp_test
+VALUES(888, '평민888', NULL, '대리', '2008-08-08', '영업부');
+
+INSERT 
+INTO emp_test
+VALUES(990, '한국990', 99, '', '09-09-09', '기획부');
+
+INSERT 
+INTO emp_test ( id,  name,  title,  dept_name)
+VALUES(991, '꺽다리991', '', '영업부');
+
+INSERT INTO emp_test
+VALUES(992, '짠돌이992', 9, '과장', '2009-09-09', '관리부');
+
+SELECT * FROM emp_test;
+
+COMMIT;
+
+==================================
+==> 순번 부여 가상 컬럼
+select rownum 순번, id , salary
+from emp_test;
+
+==>from / where 결과에 순번/. 아래 결과로 확인.
+select rownum 순번, id , salary
+from emp_test
+order by salary asc;
+
+==>from / where 결과에 순번
+==> 조건에 맞게 ??
+select rownum 순번, id , salary
+from emp_test
+where salary between 1111 and 7777;
+
+[하나]
+select rownum 순번, id , salary
+from emp_test
+where salary between 1111 and 7777 and rownum <= 3 ;
+
+[둘]
+select rownum 순번, id , salary
+from emp_test
+where salary between 1111 and 7777 and rownum >= 3 ;
+
+[셋]
+select rownum 순번, id , salary
+from emp_test
+where salary between 1111 and 7777 and rownum = 3 ;
+
+=========================================
+select id, name, salary
+from emp_test
+order by salary desc nulls last;
+
+==> 넘버를 먹이고 정렬에 들어간다.
+select rownum ,id, name, salary
+from emp_test
+where rownum <=7
+order by salary desc nulls last;
+
+select rownum ,id, name, salary
+from emp_test
+order by salary desc nulls last;
+----------------
+select rownum , vt.rnum , vt.id , vt.name, vt.salary
+from (	select rownum rnum ,id, name, salary
+	from emp_test
+	order by salary desc nulls last) vt
+where rownum <=7 ;
+
+select vt1.ronum ,vt1.vtrum, vt1.vtid , vt1.vtname , vt1.vtsal
+from(	select rownum ronum , vt.rnum vtrum, vt.id vtid, vt.name vtname, vt.salary vtsal
+	from (	select rownum rnum ,id, name, salary
+		from emp_test
+		order by salary desc nulls last) vt) vt1
+where vt1.ronum >7
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////  다시 ROWNUM 이용, 활용해 보면.. ////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+1> 월급을 많이 받는 직원 상위 3명 출력 ( id , name , salary ) 
+
+select * from emp_
+
+2> 월급을 많이 받는 직원 상위 4~6 명 출력 ( id , name , salary ) 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////

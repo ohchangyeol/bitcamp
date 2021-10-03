@@ -3,7 +3,6 @@
 
 # [Terminology theorem](https://github.com/ohchangyeol/bitcamp/tree/main/terminology)
 
-# August
 - ## 08_09 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/08_09)
     OT 
 - ## 08_10 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/08_10)
@@ -116,7 +115,6 @@
     ROUND and TRUNC
     KEWORD :: CONCATENATION , **DISTINCT** , **ORDER BY**
 
-# September
 
 - ## 09_01 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/09_01)
     SQL ::  
@@ -180,3 +178,29 @@
     **Object Scope**  
     JSP ++추가  
     CRUD   
+
+- ## 09_27 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/09_27)
+    jsp::  
+    **EL (Expression Language)**  
+    특징  
+    내장 객체    
+    OGNL  
+    **JSTL(Jsp Standard Tag Library)**  
+    
+- ## 09_29 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/09_29)
+    Git    
+    Spring - part 1 💦  
+    
+
+- ## 09_30 [Link](https://github.com/ohchangyeol/bitcamp/tree/main/09_30)
+    Spring - part 2 💦  
+    **IOCcontainer**  
+    xml  
+    
+
+- ## 10_01  [Link](https://github.com/ohchangyeol/bitcamp/tree/main/10_01)
+    Spring - part 3 💦  
+    **Bean Life Cycle**  
+    **MyBatis💨**
+    
+    
